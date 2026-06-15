@@ -12,3 +12,198 @@ ex) 상품목록 - 송민혁
 //   @include typo.font-l(var.$weight-bold);
 //   color: clr.$color-primary;
 // }
+
+/* 메인 페이지, Hero Section 스타일링 - 최수민 */
+
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid clr.$color-border;
+}
+
+.header .header-left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.header .header-left .gnb-list {
+  display: flex;
+  gap: 20px;
+  font-weight: 600;
+}
+
+.header .header-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.hero-section {
+  padding: 80px 0;
+  text-align: center;
+  background-color: clr.$color-background;
+}
+
+.hero-section .ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: clr.$color-chip-bg;
+  color: clr.$color-primary;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.hero-section .hero-title {
+  margin: 24px 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: clr.$color-title;
+  .text-primary {
+    color: clr.$color-primary; // 수민님이 원하는 Primary 컬러!
+  }
+}
+
+.hero-section .hero-desc {
+  margin-bottom: 32px;
+  color: clr.$color-muted;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.hero-section .hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.hero-section .hero-buttons .primary-btn {
+  background-color: clr.$color-primary;
+  color: clr.$color-white;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.hero-section .hero-buttons .secondary-btn {
+  background-color: transparent;
+  border: 1px solid clr.$color-border-light;
+  color: clr.$color-dark;
+  padding: 16px 32px;
+  border-radius: 8px;
+}
+
+.stats-section {
+  padding: 40px 0;
+  border-top: 1px solid clr.$color-border;
+  border-bottom: 1px solid clr.$color-border;
+  margin-bottom: 60px;
+
+  .stats-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+
+    .stat-item {
+      text-align: center;
+
+      .stat-value {
+        display: block;
+        font-size: 32px;
+        font-weight: 700;
+        color: clr.$color-primary;
+        margin-bottom: 4px;
+      }
+
+      .stat-label {
+        font-size: 14px;
+        color: clr.$color-muted;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.product-section {
+  padding: 60px 0;
+}
+
+.product-section .product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.product-section .product-grid .product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-section .product-grid .product-card .product-image-area {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: clr.$color-filter-btn;
+}
+
+.product-section .product-grid .product-card .product-image-area img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.product-section .product-grid .product-card .product-info {
+  padding: 16px 0;
+}
+
+.product-section .product-grid .product-card .product-info .product-brand {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  color: clr.$color-muted;
+}
+
+.product-section .product-grid .product-card .product-info .product-name {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: clr.$color-dark;
+}
+
+.product-section .product-grid .product-card .product-info .product-price-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.product-section
+  .product-grid
+  .product-card
+  .product-info
+  .product-price-area
+  .price {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.product-section .product-grid .product-card:hover .product-image-area img {
+  transform: scale(1.05);
+}
