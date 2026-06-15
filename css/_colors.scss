@@ -1,0 +1,25 @@
+$color-primary: #2563eb; // 메인 컬러
+$color-primary-dark: #162e93; // 서브 딥 블루
+
+$color-dark: #18181b; // 메인 페이지 기본 검은색 글씨와 아이콘 색상
+$color-black: #000000; // 순수 완전 검은색
+$color-white: #ffffff; // 순수 흰색
+
+$color-title: rgba($color-dark, 0.9); // 메인 타이틀용 아주 진한 텍스트
+$color-text: rgba($color-dark, 0.8); // 본문이나 설명용 짙은 회색
+$color-muted: rgba($color-dark, 0.6); // 설명글, 부제목, 보조 텍스트
+
+$color-border: #e4e4e7; // 선/테두리용 연한 회색
+$color-border-light: #c0c0c0; // 비활성화 테두리 및 구분선
+
+$color-background: rgba(#f9f8f6, 0.9); // 연한 오프화이트 배경색
+$color-filter-btn: #f3f2f2; // 필터 셀렉트 버튼 기본 배경
+$color-filter-hover: #f8f8f8; // 필터 셀렉트 Hover 배경
+
+$color-chip-bg: #eff4fd; // 선택된 필터 Chip 배경
+$color-chip-border: #dae6fb; // 선택된 필터 Chip 테두리
+
+$color-error: #ff0000; // 경고/에러용 빨간색
+
+$color-yellow: #ffd700; // 상품 컬러칩 - 노랑
+$color-brown: #8b4513; // 상품 컬러칩 - 갈색

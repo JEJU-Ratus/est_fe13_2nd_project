@@ -1,0 +1,14 @@
+/* 주석을 꼭! 달아주세요. 본인 파트 옆에 이름 그리고 기능에 대한 주석
+ex) 상품목록 - 송민혁
+무슨무슨 기능
+코드 블라블라
+ */
+@use "./typography" as typo;
+@use "./variables" as var;
+@use "./colors" as clr;
+
+// 예시 사용법
+// .test {
+//   @include typo.font-l(var.$weight-bold);
+//   color: clr.$color-primary;
+// }
