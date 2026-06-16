@@ -13,8 +13,6 @@ ex) 상품목록 - 송민혁
 //   color: clr.$color-primary;
 // }
 
-
-
 .blind {
   position: absolute;
   width: 1px;
@@ -24,4 +22,30 @@ ex) 상품목록 - 송민혁
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+// header -- 최수민(송민혁 scss에 맞게 일부 수정)
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid clr.$color-border;
+}
+
+.header-wrapper .header-left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.header-wrapper .header-left .gnb-list {
+  display: flex;
+  gap: 20px;
+  @include typo.font-s(var.$weight-bold);
+}
+
+.header-wrapper .header-actions {
+  display: flex;
+  gap: 15px;
 }
