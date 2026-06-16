@@ -15,12 +15,17 @@ ex) 상품목록 - 송민혁
   border: 0;
 }
 
+header {
+  border-bottom: 1px solid #e4e4e7;
+}
+
 .header-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  border-bottom: 1px solid #e4e4e7;
+  padding: 20px 80px;
+  width: 1200px;
+  margin: 0 auto;
 }
 
 .header-wrapper .header-left {
@@ -41,4 +46,97 @@ ex) 상품목록 - 송민혁
 .header-wrapper .header-actions {
   display: flex;
   gap: 15px;
+}
+
+.footer-wrapper {
+  margin: 0 auto;
+  width: 1200px;
+  padding: 120px 80px 0;
+}
+.footer-wrapper h2 {
+  margin-bottom: 24px;
+}
+
+.footer-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.footer-info dl {
+  display: grid;
+  grid-template-columns: 0.8fr 2fr;
+  gap: 6px;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.footer-info dl dt {
+  color: rgba(24, 24, 27, 0.6);
+}
+.footer-info dl dd {
+  color: rgba(24, 24, 27, 0.8);
+}
+
+.footer-menus,
+.copyright {
+  display: flex;
+}
+
+.footer-menus {
+  gap: 10px;
+}
+.footer-menus .menu-group {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.footer-menus .menu-group h3 {
+  color: rgba(24, 24, 27, 0.6);
+  margin-bottom: 16px;
+}
+.footer-menus .menu-group ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-menus .menu-group li {
+  color: rgba(24, 24, 27, 0.8);
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+.social-links a {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #d9d9d9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8a8a8a;
+  text-decoration: none;
+}
+.social-links img {
+  width: 18px;
+}
+
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.copyright p:first-child {
+  color: rgba(24, 24, 27, 0.8);
+}
+.copyright p:last-child {
+  color: rgba(24, 24, 27, 0.6);
 }/*# sourceMappingURL=common.css.map */

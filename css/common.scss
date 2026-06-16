@@ -24,13 +24,17 @@ ex) 상품목록 - 송민혁
   border: 0;
 }
 
-// header -- 최수민(송민혁 scss에 맞게 일부 수정)
+// ---------------------------------header -- 최수민(송민혁 css 수정)
+header {
+  border-bottom: 1px solid clr.$color-border;
+}
 .header-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  border-bottom: 1px solid clr.$color-border;
+  padding: 20px 80px;
+  width: var.$desktop;
+  margin: 0 auto;
 }
 
 .header-wrapper .header-left {
@@ -48,4 +52,87 @@ ex) 상품목록 - 송민혁
 .header-wrapper .header-actions {
   display: flex;
   gap: 15px;
+}
+// -----------------------------footer -송민혁
+.footer-wrapper {
+  margin: 0 auto;
+  width: var.$desktop;
+  padding: 120px 80px 0;
+  h2 {
+    margin-bottom: 24px;
+  }
+}
+.footer-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  dl {
+    display: grid;
+    grid-template-columns: 0.8fr 2fr;
+    gap: 6px;
+    @include typo.font-xs();
+    dt {
+      color: clr.$color-muted;
+    }
+    dd {
+      color: clr.$color-text;
+    }
+  }
+}
+.footer-menus,
+.copyright {
+  display: flex;
+}
+.footer-menus {
+  gap: 10px;
+  .menu-group {
+    @include typo.font-xs();
+    h3 {
+      color: clr.$color-muted;
+      margin-bottom: 16px;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    li {
+      color: clr.$color-text;
+    }
+  }
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 10px;
+  a {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #d9d9d9;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #8a8a8a;
+    text-decoration: none;
+  }
+
+  img {
+    width: 18px;
+  }
+}
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  @include typo.font-xs();
+  p:first-child {
+    color: clr.$color-text;
+  }
+  p:last-child {
+    color: clr.$color-muted;
+  }
 }
