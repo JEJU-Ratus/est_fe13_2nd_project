@@ -1,32 +1,19 @@
-/* 로그인 페이지 - 최예빈 */
-
-/* ──────────────────────────────────────────
-   메인 영역
-────────────────────────────────────────── */
 .login-main {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(249, 248, 246, 0.9);
+  background-color: #f9f8f6;
+  min-height: 100vh;
   padding: 80px 80px;
-  min-height: calc(100vh - 56px);
 }
 
-/* ──────────────────────────────────────────
-   로그인 카드
-────────────────────────────────────────── */
 .login-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  border: 1px solid #e4e4e7;
   padding: 52px 48px;
   width: 100%;
   max-width: 480px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
 }
 
-/* 카드 타이틀 - 섹션 제목 32px / line-height 1.3 */
-.login-card .login-heading {
+.login-heading {
   font-size: 32px;
   font-weight: 700;
   line-height: 1.3;
@@ -35,8 +22,7 @@
   margin-bottom: 8px;
 }
 
-/* 카드 서브타이틀 - 본문 16px / line-height 1.6 */
-.login-card .login-subheading {
+.login-subheading {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.6;
@@ -45,28 +31,19 @@
   margin-bottom: 36px;
 }
 
-/* ──────────────────────────────────────────
-   폼 필드
-────────────────────────────────────────── */
-
-/* 폼 그룹 (라벨 + 인풋 묶음) - gap-6 24px */
-.login-card .form-group {
+.form-group {
   display: flex;
   flex-direction: column;
   gap: 6px;
   margin-bottom: 24px;
 }
-
-/* 인풋 라벨 - 본문 16px */
-.login-card .form-group .form-label {
+.form-group .form-label {
   font-size: 16px;
   font-weight: 700;
   line-height: 1.6;
   color: rgba(24, 24, 27, 0.8);
 }
-
-/* 텍스트 인풋 - 본문 16px */
-.login-card .form-group .form-input {
+.form-group .form-input {
   width: 100%;
   padding: 12px 14px;
   border: 1.5px solid #e4e4e7;
@@ -79,29 +56,25 @@
   outline: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
-
-.login-card .form-group .form-input::placeholder {
+.form-group .form-input::-moz-placeholder {
   color: #c0c0c0;
 }
-
-.login-card .form-group .form-input:focus {
+.form-group .form-input::placeholder {
+  color: #c0c0c0;
+}
+.form-group .form-input:focus {
   border-color: #2563eb;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
   background-color: #ffffff;
 }
 
-/* ──────────────────────────────────────────
-   로그인 상태 유지 + 비밀번호 찾기 행
-────────────────────────────────────────── */
-.login-card .form-options {
+.form-options {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 8px 0 24px;
 }
-
-/* 체크박스 + 텍스트 묶음 - 본문 16px */
-.login-card .form-options .checkbox-label {
+.form-options .checkbox-label {
   display: flex;
   align-items: center;
   gap: 7px;
@@ -110,34 +83,29 @@
   line-height: 1.6;
   color: rgba(24, 24, 27, 0.8);
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
-
-.login-card .form-options .checkbox-label input[type="checkbox"] {
+.form-options .checkbox-label input[type=checkbox] {
   width: 15px;
   height: 15px;
   accent-color: #2563eb;
   cursor: pointer;
   flex-shrink: 0;
 }
-
-/* 비밀번호 찾기 링크 - 본문 16px */
-.login-card .form-options .forgot-link {
+.form-options .forgot-link {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.6;
   color: rgba(24, 24, 27, 0.6);
   transition: color 0.15s ease;
 }
-
-.login-card .form-options .forgot-link:hover {
+.form-options .forgot-link:hover {
   color: #2563eb;
 }
 
-/* ──────────────────────────────────────────
-   로그인 버튼 - 본문 16px
-────────────────────────────────────────── */
-.login-card .btn-login {
+.btn-login {
   display: block;
   width: 100%;
   padding: 14px;
@@ -149,14 +117,14 @@
   border-radius: 8px;
   transition: background-color 0.15s ease, transform 0.1s;
 }
+.btn-login:hover {
+  background-color: #162e93;
+}
+.btn-login:active {
+  transform: scale(0.99);
+}
 
-.login-card .btn-login:hover  { background-color: #162e93; }
-.login-card .btn-login:active { transform: scale(0.99); }
-
-/* ──────────────────────────────────────────
-   회원가입 안내 - 본문 16px
-────────────────────────────────────────── */
-.login-card .signup-row {
+.signup-row {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.6;
@@ -164,21 +132,16 @@
   color: rgba(24, 24, 27, 0.6);
   margin-top: 24px;
 }
-
-.login-card .signup-row .signup-link {
+.signup-row .signup-link {
   color: #2563eb;
   font-weight: 700;
   transition: opacity 0.15s ease;
 }
-
-.login-card .signup-row .signup-link:hover {
+.signup-row .signup-link:hover {
   opacity: 0.75;
 }
 
-/* ──────────────────────────────────────────
-   구분선
-────────────────────────────────────────── */
-.login-card .divider {
+.divider {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -188,24 +151,18 @@
   line-height: 1.6;
   color: #c0c0c0;
 }
-
-.login-card .divider::before,
-.login-card .divider::after {
-  content: '';
+.divider::before, .divider::after {
+  content: "";
   flex: 1;
   height: 1px;
   background-color: #e4e4e7;
 }
 
-/* ──────────────────────────────────────────
-   소셜 로그인 버튼 - gap-6 24px
-────────────────────────────────────────── */
-.login-card .social-btn-list {
+.social-btn-list {
   display: flex;
   gap: 24px;
 }
-
-.login-card .social-btn-list .btn-social {
+.social-btn-list .btn-social {
   flex: 1;
   display: flex;
   align-items: center;
@@ -221,8 +178,19 @@
   background-color: #ffffff;
   transition: background-color 0.15s ease, border-color 0.15s ease;
 }
-
-.login-card .social-btn-list .btn-social:hover {
+.social-btn-list .btn-social:hover {
   background-color: #f8f8f8;
   border-color: #c0c0c0;
 }
+
+.error-msg {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #ff0000;
+  margin-top: 4px;
+}
+
+.input-error {
+  border-color: #ff0000 !important;
+}/*# sourceMappingURL=login.css.map */
