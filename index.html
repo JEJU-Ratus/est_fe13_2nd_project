@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ROUNZ - 2차 프로젝트</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/main.css">
+  </head>
+  <body>
+    <!-- 메인 페이지 - 최수민 시작 -->
+    <div class="app-container">
+      <header class="header">
+        <div class="header-left">
+          <h1 class="logo">
+            <a href="/">
+              <img src="./img/LOGO-img.png" alt="ROUNZ" />
+              <span class="blind">ROUNZ 로고</span>
+            </a>
+          </h1>
+
+          <nav class="gnb">
+            <ul class="gnb-list">
+              <li><a href="#">안경</a></li>
+              <li><a href="#">선글라스</a></li>
+              <li><a href="#">AI TRY-ON</a></li>
+              <li><a href="#">고객센터</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="header-actions">
+          <button class="icon-btn search-btn">
+            <span class="material-symbols-outlined">search</span>
+            <span class="blind">검색</span>
+          </button>
+          <button class="icon-btn user-btn">
+            <span class="material-symbols-outlined">person</span>
+            <span class="blind">마이페이지</span>
+          </button>
+          <button class="icon-btn cart-btn">
+            <span class="material-symbols-outlined">local_mall</span>
+            <span class="blind">장바구니</span>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero-section">
+          <div class="ai-badge">
+            <span class="material-symbols-outlined">auto_awesome</span>
+            AI-Powered Virtual Fitting
+          </div>
+          <h1 class="hero-title">
+            나에게 딱 맞는<br />
+            <span class="text-primary">안경 찾기</span>
+          </h1>
+          <p class="hero-desc">
+            AI 가상 피팅 기술로 아이웨어 쇼핑의 미래를 경험해 보세요.<br />
+            수천 개의 안경테를 착용한 당신의 모습을 지금 즉시 확인할 수
+            있습니다.
+          </p>
+
+          <div class="hero-buttons">
+            <button class="btn primary-btn">가상 피팅 시작하기 →</button>
+            <button class="btn secondary-btn">컬렉션 둘러보기</button>
+          </div>
+        </section>
+
+        <section class="stats-section">
+          <ul class="stats-list">
+            <li class="stat-item">
+              <strong class="stat-value">5K+</strong>
+              <span class="stat-label">Frames</span>
+            </li>
+            <li class="stat-item">
+              <strong class="stat-value">AI</strong>
+              <span class="stat-label">Technology</span>
+            </li>
+            <li class="stat-item">
+              <strong class="stat-value">24h</strong>
+              <span class="stat-label">Delivery</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="product-section new-arrivals">
+          <div class="section-header">
+            <h2 class="section-title">신상품</h2>
+            <p class="section-desc">
+              최신 프리미엄 아이웨어 컬렉션을 만나보세요
+            </p>
+          </div>
+
+          <ul class="product-grid">
+            <li class="product-card">
+              <div class="product-image-area">
+                <span class="badge new-badge">NEW</span>
+                <img
+                  src="https://placehold.co/400x400/eeeeee/999999?text=Image"
+                  alt="Classic Aviator"
+                />
+              </div>
+              <div class="product-info">
+                <span class="product-brand">ROUNZ</span>
+                <h3 class="product-name">Classic Aviator</h3>
+                <div class="color-options">
+                  <span class="color-swatch silver"></span>
+                  <span class="color-swatch yellow"></span>
+                  <span class="color-swatch black"></span>
+                </div>
+                <div class="product-price-area">
+                  <strong class="price">189,000원</strong>
+                  <del class="original-price">229,000원</del>
+                </div>
+              </div>
+            </li>
+            <li class="product-card">
+              <div class="product-image-area">
+                <span class="badge new-badge">NEW</span>
+                <img
+                  src="https://placehold.co/400x400/eeeeee/999999?text=Image"
+                  alt="Wayfarer Style"
+                />
+              </div>
+              <div class="product-info">
+                <span class="product-brand">ROUNZ</span>
+                <h3 class="product-name">Wayfarer Style</h3>
+                <div class="color-options">
+                  <span class="color-swatch black"></span>
+                  <span class="color-swatch brown"></span>
+                </div>
+                <div class="product-price-area">
+                  <strong class="price">169,000원</strong>
+                </div>
+              </div>
+            </li>
+            <li class="product-card">
+              <div class="product-image-area">
+                <span class="badge new-badge">NEW</span>
+                <img
+                  src="https://placehold.co/400x400/eeeeee/999999?text=Image"
+                  alt="Cat Eye Classic"
+                />
+              </div>
+              <div class="product-info">
+                <span class="product-brand">ROUNZ</span>
+                <h3 class="product-name">Cat Eye Classic</h3>
+                <div class="color-options">
+                  <span class="color-swatch black"></span>
+                  <span class="color-swatch brown"></span>
+                  <span class="color-swatch silver"></span>
+                </div>
+                <div class="product-price-area">
+                  <strong class="price">219,000원</strong>
+                </div>
+              </div>
+            </li>
+            <li class="product-card">
+              <div class="product-image-area">
+                <span class="badge new-badge">NEW</span>
+                <img
+                  src="https://placehold.co/400x400/eeeeee/999999?text=Image"
+                  alt="Modern Square"
+                />
+              </div>
+              <div class="product-info">
+                <span class="product-brand">ROUNZ PREMIUM</span>
+                <h3 class="product-name">Modern Square</h3>
+                <div class="color-options">
+                  <span class="color-swatch black"></span>
+                </div>
+                <div class="product-price-area">
+                  <strong class="price">239,000원</strong>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="product-section all-eyewear">
+          <div class="section-header">
+            <h2 class="section-title">전체 아이웨어</h2>
+            <p class="section-subtitle">ROUNZ의 모든 아이웨어를 만나보세요</p>
+          </div>
+
+          <ul class="product-grid">
+            <li class="product-card">
+              <div class="product-image-area">
+                <img
+                  src="https://placehold.co/400x400/eeeeee/999999?text=Image+1"
+                  alt="Classic Aviator"
+                />
+              </div>
+              <div class="product-info">
+                <span class="product-brand">ROUNZ</span>
+                <h3 class="product-name">Classic Aviator</h3>
+                <div class="product-price-area">
+                  <strong class="price">189,000원</strong>
+                </div>
+              </div>
+            </li>
+            <li class="product-card">
+              <div class="product-image-area">
+                <img
+                  src="https://placehold.co/400x400/eeeeee/999999?text=Image+2"
+                  alt="Round Metal Frame"
+                />
+              </div>
+              <div class="product-info">
+                <span class="product-brand">ROUNZ PREMIUM</span>
+                <h3 class="product-name">Round Metal Frame</h3>
+                <div class="product-price-area">
+                  <strong class="price">249,000원</strong>
+                </div>
+              </div>
+            </li>
+            <li class="product-card">
+              <div class="product-image-area">
+                <img
+                  src="https://placehold.co/400x400/eeeeee/999999?text=Image+3"
+                  alt="Wayfarer Style"
+                />
+              </div>
+              <div class="product-info">
+                <span class="product-brand">ROUNZ</span>
+                <h3 class="product-name">Wayfarer Style</h3>
+                <div class="product-price-area">
+                  <strong class="price">169,000원</strong>
+                </div>
+              </div>
+            </li>
+            <li class="product-card">
+              <div class="product-image-area">
+                <img
+                  src="https://placehold.co/400x400/eeeeee/999999?text=Image+4"
+                  alt="Square Acetate"
+                />
+              </div>
+              <div class="product-info">
+                <span class="product-brand">ROUNZ</span>
+                <h3 class="product-name">Square Acetate</h3>
+                <div class="product-price-area">
+                  <strong class="price">199,000원</strong>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <h2 class="footer-logo">ROUNZ</h2>
+
+        <address class="company-info">
+          <p>회사명: 주식회사 라운즈 | 대표자: 김라운</p>
+          <p>사업자등록번호: 123-45-67890</p>
+          <p>주소: 서울특별시 강남구 테헤란로 123, 라운즈빌딩 7층</p>
+          <p>대표전화: 1588-0000 | 이메일: hello@rounz.com</p>
+        </address>
+
+        <ul class="social-links">
+          <li><a href="#" class="social-icon">IG</a></li>
+          <li><a href="#" class="social-icon">FB</a></li>
+          <li><a href="#" class="social-icon">YT</a></li>
+          <li><a href="#" class="social-icon">IN</a></li>
+        </ul>
+
+        <div class="footer-menus">
+          <div class="menu-group">
+            <h3 class="menu-title">고객지원</h3>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">문의하기</a></li>
+              <li><a href="#">이용가이드</a></li>
+            </ul>
+          </div>
+          <div class="menu-group">
+            <h3 class="menu-title">정책</h3>
+            <ul>
+              <li><a href="#">이용약관</a></li>
+              <li><a href="#">개인정보처리방침</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>© 2026 ROUNZ Inc. All Rights Reserved.</p>
+          <p>Designed with care in Seoul, Korea</p>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="./js/common.js"></script>
+</body>
+  </body>
+</html>
+<!-- 메인 페이지 - 최수민 끝 -->

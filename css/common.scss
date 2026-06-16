@@ -12,3 +12,16 @@ ex) 상품목록 - 송민혁
 //   @include typo.font-l(var.$weight-bold);
 //   color: clr.$color-primary;
 // }
+
+/* 메인 페이지, Hero Section 스타일링 - 최수민 */
+
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

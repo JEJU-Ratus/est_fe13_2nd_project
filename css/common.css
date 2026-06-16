@@ -3,4 +3,15 @@
 ex) 상품목록 - 송민혁
 무슨무슨 기능
 코드 블라블라
- *//*# sourceMappingURL=common.css.map */
+ */
+/* 메인 페이지, Hero Section 스타일링 - 최수민 */
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}/*# sourceMappingURL=common.css.map */
