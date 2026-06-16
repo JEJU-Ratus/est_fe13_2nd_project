@@ -19,12 +19,12 @@ body {
 .content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 40px 80px;
 }
 
 .hero-section {
   text-align: center;
-  padding: 40px 0 50px;
+  padding: 40px 0 120px;
 }
 .hero-section .sub-title {
   color: #2563eb;
@@ -36,14 +36,16 @@ body {
   line-height: 1.5;
 }
 .hero-section .main-title {
-  font-size: 36px;
+  font-size: 48px;
+  line-height: 1.2;
   font-weight: 700;
   color: rgba(24, 24, 27, 0.9);
   margin-bottom: 15px;
 }
 .hero-section .desc {
   color: rgba(24, 24, 27, 0.6);
-  font-size: 15px;
+  font-size: 16px;
+  line-height: 1.6;
   margin-bottom: 30px;
 }
 .hero-section .search-bar-container {

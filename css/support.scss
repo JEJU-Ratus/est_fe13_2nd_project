@@ -28,12 +28,12 @@ body {
 .content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 40px 80px;
 }
 // 메인 타이틀 & 통합 검색 바 (Hero Section)
 .hero-section {
   text-align: center;
-  padding: 40px 0 50px;
+  padding: 40px 0 120px;
 
   .sub-title {
     color: clr.$color-primary;
@@ -44,7 +44,8 @@ body {
   }
 
   .main-title {
-    font-size: var.$font-l; // font-l
+    font-size: 48px; // PC 명세: 48px
+    line-height: 1.2;
     font-weight: var.$weight-bold;
     color: clr.$color-title;
     margin-bottom: 15px;
@@ -52,7 +53,8 @@ body {
 
   .desc {
     color: clr.$color-muted;
-    font-size: 15px;
+    font-size: 16px; // PC 명세: 16px
+    line-height: 1.6;
     margin-bottom: 30px;
   }
 
