@@ -1,47 +1,423 @@
-@import "./colors";
 @use "./variables" as var;
-@import "./typography";
+@use "./typography" as typo;
+@use "./colors" as clr;
 
 .product-detail-container {
-  padding: 16px; // 전체 컨테이너 여백
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 8px 16px 16px 16px;
 
-  // 1. 이미지 갤러리 영역
-  .product-gallery {
-    .main-image-wrap {
-      width: 100%;
-      aspect-ratio: 1/1;
-      background: #f2f2f2;
-      border-radius: 16px;
-      overflow: hidden;
+  > section {
+    margin: 0;
+    padding: 24px 0;
+    border: none;
+    &:last-child {
+      padding-bottom: 0;
     }
   }
 
-  // 2. 브랜드 혜택 영역
+  .breadcrumb {
+    padding: 12px 0 24px 0;
+    ol {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        display: flex;
+        align-items: center;
+        @include typo.font-xs(var.$weight-regular);
+        color: clr.$color-muted;
+        &:not(:last-child)::after {
+          content: "/";
+          margin: 0 8px;
+          color: clr.$color-border;
+        }
+        &[aria-current="page"] {
+          color: clr.$color-dark;
+          font-weight: var.$weight-bold;
+        }
+      }
+    }
+  }
+
+  .product-gallery {
+    .main-image-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1/1;
+      background: clr.$color-filter-btn;
+      border-radius: 20px;
+      overflow: hidden;
+      .main-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .badge-group {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .badge {
+        @include typo.font-s(var.$weight-regular);
+        padding: 6px 14px;
+        border-radius: 20px;
+        color: clr.$color-white;
+        display: inline-block;
+      }
+      .badge-new {
+        background: clr.$color-primary;
+      }
+      .badge-discount {
+        background: clr.$color-black;
+      }
+      .btn-wish {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: clr.$color-white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+
+        &:active {
+          transform: scale(0.9);
+        }
+
+        .heart-icon {
+          color: #a1a1aa;
+          transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        &.is-active {
+          .heart-icon {
+            color: #a1a1aa;
+            font-variation-settings: "FILL" 1;
+            animation: heart-pop 0.3s ease-out;
+          }
+        }
+      }
+    }
+    .thumbnail-list {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+      list-style: none;
+      padding: 0;
+      .thumbnail-item {
+        flex: 1;
+        aspect-ratio: 1/1;
+        border-radius: 12px;
+        border: 2px solid transparent;
+        cursor: pointer;
+        overflow: hidden;
+        &.active {
+          border-color: clr.$color-primary;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
   .brand-benefits {
     display: flex;
-    justify-content: space-between;
-    padding: 24px 0;
-
+    justify-content: space-around;
     .benefit-item {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 6px;
+      .icon-circle {
+        width: 48px;
+        height: 48px;
+        background-color: #f0f4ff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: clr.$color-primary;
+        margin-bottom: 4px;
+        span {
+          font-size: 22px;
+          font-variation-settings: "wght" 300;
+        }
+      }
+      .benefit-title {
+        @include typo.font-s(var.$weight-regular);
+        color: clr.$color-title;
+        margin-bottom: 0;
+      }
+      .benefit-desc {
+        @include typo.font-2xs(var.$weight-regular);
+        color: clr.$color-muted;
+        margin-top: 0;
+      }
     }
   }
 
-  // 3. 상품 정보 영역
   .product-info-section {
-    padding: 24px 0;
-
+    .brand-name {
+      font-size: 16px;
+      font-weight: var.$weight-regular;
+      color: clr.$color-muted;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
     .product-title {
-      font-size: 24px;
-      font-weight: 700;
+      @include typo.font-l(var.$weight-bold);
+      color: clr.$color-title;
+      margin-bottom: 12px;
+    }
+    .rating-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      .stars {
+        color: #ffb800;
+        font-size: 16px;
+      }
+      .rating-score {
+        @include typo.font-s(var.$weight-bold);
+      }
+      .review-count {
+        @include typo.font-s(var.$weight-regular);
+        color: clr.$color-muted;
+      }
+    }
+    .price-group {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 24px;
+      .current-price {
+        @include typo.font-l(var.$weight-bold);
+        color: clr.$color-primary;
+      }
+      .original-price {
+        @include typo.font-m(var.$weight-regular);
+        color: clr.$color-muted;
+        text-decoration: line-through;
+      }
+      .discount-rate {
+        @include typo.font-s(var.$weight-medium);
+        color: clr.$color-primary;
+        background: #eef2ff;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    }
+    .product-description {
+      @include typo.font-s(var.$weight-regular);
+      color: clr.$color-text;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .option-group {
+      margin-bottom: 32px;
+      .option-label {
+        @include typo.font-s(var.$weight-bold);
+        margin-bottom: 12px;
+        display: block;
+      }
+      .color-chips {
+        display: flex;
+        gap: 12px;
+        .chip {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          border: 2px solid clr.$color-border;
+          cursor: pointer;
+          transition: transform 0.2s;
+          &.chip-grey {
+            background-color: #d1d5db;
+          }
+          &.chip-yellow {
+            background-color: #facc15;
+          }
+          &.chip-black {
+            background-color: #000;
+          }
+          &.active {
+            border-color: clr.$color-primary;
+          }
+        }
+      }
+    }
+    .action-button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .btn-primary,
+      .btn-secondary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        &:active {
+          transform: scale(0.97);
+          filter: brightness(0.9);
+        }
+        .material-symbols-outlined {
+          font-size: 1em;
+          margin-right: 8px;
+        }
+      }
+      .btn-primary {
+        width: 100%;
+        height: 56px;
+        border-radius: 12px;
+        border: none;
+        background: clr.$color-primary;
+        color: #fff;
+        @include typo.font-m(var.$weight-bold);
+        cursor: pointer;
+        &:hover {
+          background: clr.$color-primary-dark;
+        }
+      }
+      .sub-buttons-wrap {
+        display: flex;
+        gap: 12px;
+        .btn-secondary {
+          flex: 1;
+          height: 56px;
+          border-radius: 12px;
+          border: 1px solid clr.$color-border;
+          background: #fff;
+          @include typo.font-m(var.$weight-medium);
+          cursor: pointer;
+          &:hover {
+            background: #f9fafb;
+          }
+        }
+      }
     }
   }
-
-  // 4. 제품 사양 영역
   .product-specs-section {
-    padding: 24px 0;
+    .specs-box {
+      border: 1.5px solid #d4d4d8;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #f4f4f5;
+    }
+    .specs-heading {
+      padding: 16px 20px;
+      border-bottom: 1.5px solid #d4d4d8;
+      background: #f4f4f5;
+      @include typo.font-s(var.$weight-regular);
+      color: #99a1af;
+      margin: 0;
+    }
+    .specs-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      .spec-item {
+        display: flex;
+        flex-direction: column;
+        padding: 14px 20px;
+        border-bottom: 1.5px solid #d4d4d8;
+        border-right: 1.5px solid #d4d4d8;
+        &:nth-child(2n) {
+          border-right: none;
+        }
+        &:nth-last-child(-n + 2) {
+          border-bottom: none;
+        }
+        &:last-child:nth-child(odd) {
+          border-right: none;
+        }
+        dt {
+          @include typo.font-2xs(var.$weight-regular);
+          color: #99a1af;
+          margin-bottom: 4px;
+        }
+        dd {
+          @include typo.font-s(var.$weight-regular);
+          color: clr.$color-black;
+        }
+      }
+    }
+  }
+}
+
+@keyframes heart-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 알림창 & 모달 스타일 */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  color: clr.$color-white;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  &.show {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  &.open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-content {
+    background: white;
+    padding: 24px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    .close-modal {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-size: 24px;
+    }
   }
 }
