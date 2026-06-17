@@ -130,7 +130,7 @@
       overflow: hidden;
       border-radius: 8px;
 
-      :hover {
+      &:hover {
         cursor: pointer;
       }
       .badge {
@@ -150,24 +150,32 @@
 
     .product-info {
       padding: 16px 0;
-
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
       .product-brand {
         display: block;
-        margin-bottom: 4px;
         color: clr.$color-muted;
-
-        .product-name {
-          margin-bottom: 8px;
-          color: clr.$color-dark;
+      }
+      .product-name {
+        color: clr.$color-dark;
+      }
+      .color-options {
+        display: flex;
+        gap: 6px;
+        .color-swatch {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
         }
-        .product-price-area {
-          display: flex;
-          align-items: center;
-          gap: 8px;
+      }
+      .product-price-area {
+        display: flex;
+        align-items: center;
+        gap: 8px;
 
-          .price {
-            font-weight: var.$weight-bold;
-          }
+        .price {
+          font-weight: var.$weight-bold;
         }
       }
     }
@@ -176,4 +184,46 @@
 
 .product-section .product-grid .product-card:hover .product-image-area img {
   transform: scale(1.05);
+}
+// 스켈레톤 ui------------------------------------------
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: #eef1f6;
+
+  &:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      color-mix(in oklab, #e3e8f1 80%, transparent) 50%,
+      transparent 100%
+    );
+    transform: translateX(-100%);
+    animation: shimmer 1.2s infinite;
+  }
+}
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.skeleton-box {
+  aspect-ratio: 1/1;
+  width: 100%;
+  object-fit: cover;
+}
+.skeleton-line {
+  height: 12px;
+  border-radius: 6px;
+}
+@media (max-width: 767px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
