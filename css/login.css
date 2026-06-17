@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   background-color: rgba(249, 248, 246, 0.9);
-  min-height: 100vh;
+  height: calc(100vh - 64px);
 }
 
 .login-card {
@@ -48,8 +48,8 @@
   border: 1.5px solid #e4e4e7;
   border-radius: 8px;
   font-family: "Inter", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1.5;
   color: rgba(24, 24, 27, 0.8);
   background-color: #ffffff;
@@ -77,7 +77,7 @@
   align-items: center;
   gap: 7px;
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
   color: rgba(24, 24, 27, 0.8);
@@ -95,7 +95,7 @@
 }
 .login-card .form-options .forgot-link {
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
   color: rgba(24, 24, 27, 0.6);
@@ -112,8 +112,8 @@
   background-color: #2563eb;
   color: #ffffff;
   font-family: "Inter", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 500;
   line-height: 1.5;
   border-radius: 8px;
   transition: background-color 0.15s ease, transform 0.1s;
@@ -126,11 +126,11 @@
 }
 .login-card .signup-row {
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
   text-align: center;
-  color: rgba(24, 24, 27, 0.6);
+  color: rgba(24, 24, 27, 0.9);
   margin-top: 24px;
 }
 .login-card .signup-row .signup-link {
@@ -147,7 +147,7 @@
   gap: 12px;
   margin: 24px 0;
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.5;
   color: rgba(24, 24, 27, 0.6);
@@ -172,10 +172,10 @@
   border: 1.5px solid rgba(22, 46, 147, 0.5);
   border-radius: 8px;
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
-  color: rgba(24, 24, 27, 0.7);
+  color: #18181b;
   background-color: rgba(249, 248, 246, 0.9);
   transition: background-color 0.15s ease, border-color 0.15s ease;
 }
@@ -185,7 +185,7 @@
 }
 .login-card .error-msg {
   font-family: "Inter", sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
   color: #ff0000;
@@ -197,7 +197,8 @@
 
 @media (max-width: 1199px) {
   .login-main {
-    padding: 0 40px;
+    height: auto;
+    min-height: calc(100vh - 64px);
   }
   .login-card {
     padding: 16px 40px;
@@ -238,8 +239,9 @@
 }
 @media (max-width: 767px) {
   .login-main {
+    height: auto;
+    min-height: calc(100vh - 64px);
     align-items: flex-start;
-    padding: 40px 20px 0;
   }
   .login-card {
     padding: 16px 20px;
@@ -250,7 +252,7 @@
   }
   .login-card .login-subheading {
     font-family: "Inter", sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 1.5;
   }
@@ -259,37 +261,37 @@
   }
   .login-card .form-group .form-label {
     font-family: "Inter", sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 1.5;
   }
   .login-card .form-group .form-input {
     font-family: "Inter", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 400;
     line-height: 1.5;
   }
   .login-card .form-options .checkbox-label {
     font-family: "Inter", sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 1.5;
   }
   .login-card .form-options .forgot-link {
     font-family: "Inter", sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 1.5;
   }
   .login-card .btn-login {
     font-family: "Inter", sans-serif;
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 500;
     line-height: 1.5;
   }
   .login-card .signup-row {
     font-family: "Inter", sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 1.5;
   }
@@ -298,7 +300,7 @@
   }
   .login-card .social-btn-list .btn-social {
     font-family: "Inter", sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 1.5;
   }

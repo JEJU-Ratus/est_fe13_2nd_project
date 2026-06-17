@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   background-color: clr.$color-background;
-  min-height: 100vh;
+  height: calc(100vh - 64px);
 }
 
 // 로그인 카드
@@ -54,7 +54,7 @@
       padding: 12px 14px;
       border: 1.5px solid clr.$color-border;
       border-radius: 8px;
-      @include typo.font-m(var.$weight-medium);
+      @include typo.font-s(var.$weight-regular);
       color: clr.$color-text;
       background-color: clr.$color-white;
       outline: none;
@@ -80,12 +80,11 @@
     justify-content: space-between;
     margin: 8px 0 24px;
 
-    // 체크박스 + 텍스트 묶음
     .checkbox-label {
       display: flex;
       align-items: center;
       gap: 7px;
-      @include typo.font-m(var.$weight-medium);
+      @include typo.font-s(var.$weight-medium);
       color: clr.$color-text;
       cursor: pointer;
       user-select: none;
@@ -99,16 +98,13 @@
       }
     }
 
-    // 비밀번호 찾기
     .forgot-link {
-      @include typo.font-m(var.$weight-regular);
+      @include typo.font-s(var.$weight-regular);
       color: clr.$color-muted;
       transition: color 0.15s ease;
       cursor: pointer;
 
-      &:hover {
-        color: clr.$color-primary;
-      }
+      &:hover { color: clr.$color-primary; }
     }
   }
 
@@ -119,36 +115,28 @@
     padding: 14px;
     background-color: clr.$color-primary;
     color: clr.$color-white;
-    @include typo.font-m(var.$weight-bold);
+    @include typo.font-s(var.$weight-medium);
     border-radius: 8px;
     transition:
       background-color 0.15s ease,
       transform 0.1s;
 
-    &:hover {
-      background-color: clr.$color-primary-dark;
-    }
-    &:active {
-      transform: scale(0.99);
-    }
+    &:hover { background-color: clr.$color-primary-dark; }
+    &:active { transform: scale(0.99); }
   }
 
   // 회원가입 안내
   .signup-row {
-    @include typo.font-m(var.$weight-regular);
+    @include typo.font-s(var.$weight-regular);
     text-align: center;
-    color: clr.$color-muted;
+    color: clr.$color-title;
     margin-top: 24px;
 
-    // 회원가입 링크
     .signup-link {
       color: clr.$color-primary;
       font-weight: var.$weight-medium;
       transition: opacity 0.15s ease;
-
-      &:hover {
-        opacity: 0.75;
-      }
+      &:hover { opacity: 0.75; }
     }
   }
 
@@ -158,7 +146,7 @@
     align-items: center;
     gap: 12px;
     margin: 24px 0;
-    @include typo.font-m(var.$weight-regular);
+    @include typo.font-s(var.$weight-regular);
     color: clr.$color-muted;
 
     &::before,
@@ -184,8 +172,8 @@
       padding: 12px;
       border: 1.5px solid rgba(22, 46, 147, 0.5);
       border-radius: 8px;
-      @include typo.font-m(var.$weight-medium);
-      color: rgba(24, 24, 27, 0.7);
+      @include typo.font-s(var.$weight-medium);
+      color: clr.$color-dark;
       background-color: clr.$color-background;
       transition:
         background-color 0.15s ease,
@@ -200,7 +188,7 @@
 
   // 에러 메시지
   .error-msg {
-    @include typo.font-s(var.$weight-regular);
+    @include typo.font-xs(var.$weight-regular);
     color: clr.$color-error;
     margin-top: 4px;
   }
@@ -214,91 +202,49 @@
 // 태블릿 (~ 1199px)
 @media (max-width: 1199px) {
   .login-main {
-    padding: 0 40px;
+    height: auto;
+    min-height: calc(100vh - 64px);
   }
 
   .login-card {
     padding: 16px 40px;
 
-    .login-heading {
-      font-size: 24px;
-    }
-    .login-subheading {
-      font-size: 15px;
-    }
-    .form-group .form-label {
-      font-size: 15px;
-    }
-    .form-group .form-input {
-      font-size: 15px;
-    }
-    .form-options .checkbox-label {
-      font-size: 15px;
-    }
-    .form-options .forgot-link {
-      font-size: 15px;
-    }
-    .btn-login {
-      font-size: 15px;
-    }
-    .signup-row {
-      font-size: 15px;
-    }
-    .divider {
-      font-size: 15px;
-    }
-    .social-btn-list {
-      gap: 16px;
-    }
-    .social-btn-list .btn-social {
-      font-size: 15px;
-    }
+    .login-heading { font-size: 24px; }
+    .login-subheading { font-size: 15px; }
+    .form-group .form-label { font-size: 15px; }
+    .form-group .form-input { font-size: 15px; }
+    .form-options .checkbox-label { font-size: 15px; }
+    .form-options .forgot-link { font-size: 15px; }
+    .btn-login { font-size: 15px; }
+    .signup-row { font-size: 15px; }
+    .divider { font-size: 15px; }
+    .social-btn-list { gap: 16px; }
+    .social-btn-list .btn-social { font-size: 15px; }
   }
 }
 
 // 모바일 (~ 767px)
 @media (max-width: 767px) {
   .login-main {
+    height: auto;
+    min-height: calc(100vh - 64px);
     align-items: flex-start;
-    padding: 40px 20px 0;
   }
 
   .login-card {
     padding: 16px 20px;
     max-width: 100%;
 
-    .login-heading {
-      font-size: 20px;
-    }
-    .login-subheading {
-      @include typo.font-s(var.$weight-regular);
-    }
-    .form-group {
-      margin-bottom: 16px;
-    }
-    .form-group .form-label {
-      @include typo.font-s(var.$weight-medium);
-    }
-    .form-group .form-input {
-      @include typo.font-s(var.$weight-medium);
-    }
-    .form-options .checkbox-label {
-      @include typo.font-s(var.$weight-medium);
-    }
-    .form-options .forgot-link {
-      @include typo.font-s(var.$weight-regular);
-    }
-    .btn-login {
-      @include typo.font-s(var.$weight-bold);
-    }
-    .signup-row {
-      @include typo.font-s(var.$weight-regular);
-    }
-    .social-btn-list {
-      gap: 12px;
-    }
-    .social-btn-list .btn-social {
-      @include typo.font-s(var.$weight-medium);
-    }
+    .login-heading { font-size: 20px; }
+    .login-subheading { @include typo.font-xs(var.$weight-regular); }
+    .form-group { margin-bottom: 16px; }
+    .form-group .form-label { @include typo.font-xs(var.$weight-medium); }
+    .form-group .form-input { @include typo.font-xs(var.$weight-regular); }
+    .form-options .checkbox-label { @include typo.font-xs(var.$weight-medium); }
+    .form-options .forgot-link { @include typo.font-xs(var.$weight-regular); }
+    .btn-login { @include typo.font-xs(var.$weight-medium); }
+    .signup-row { @include typo.font-xs(var.$weight-regular); }
+    .social-btn-list { gap: 12px; }
+    .social-btn-list .btn-social { @include typo.font-xs(var.$weight-medium); }
   }
 }
