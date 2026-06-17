@@ -455,4 +455,196 @@ body {
       background-color: clr.$color-primary-dark;
     }
   }
+  // ────────────────────────────────────────────
+  // Cart Items Section (반응형 추가)
+  // ────────────────────────────────────────────
+
+  .cart-items {
+    // 기존 코드 유지 ...
+
+    &__header {
+      // 기존 코드 유지 ...
+
+      @media (max-width: var.$mobile) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+    }
+
+    &__select-all {
+      gap: 16px; // tablet/mobile에서 gap 축소
+
+      span {
+        @media (max-width: var.$tablet) {
+          font-size: 15px;
+        }
+        @media (max-width: var.$mobile) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &__delete-selected {
+      @media (max-width: var.$tablet) {
+        font-size: 15px;
+      }
+      @media (max-width: var.$mobile) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  // ────────────────────────────────────────────
+  // Single Cart Item (반응형 추가)
+  // ────────────────────────────────────────────
+
+  .cart-item {
+    // 기존 코드 유지 ...
+
+    @media (max-width: var.$mobile) {
+      gap: 16px;
+      padding: 16px 0;
+    }
+
+    &__image {
+      @media (max-width: var.$mobile) {
+        width: 64px;
+        height: 64px;
+      }
+    }
+
+    &__brand,
+    &__name,
+    &__link,
+    &__price {
+      @media (max-width: var.$tablet) {
+        font-size: 15px;
+      }
+      @media (max-width: var.$mobile) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  // ────────────────────────────────────────────
+  // Cart Filled Layout (반응형 — 이미 tablet 처리됨)
+  // ────────────────────────────────────────────
+
+  // .cart-filled의 @media (max-width: var.$tablet) 이미 존재 → 유지
+  // mobile 추가:
+
+  .cart-filled {
+    @media (max-width: var.$mobile) {
+      gap: 16px; // 명세: gap-4
+    }
+  }
+
+  // ────────────────────────────────────────────
+  // Notice Text (반응형 추가)
+  // ────────────────────────────────────────────
+
+  .cart-notice {
+    @media (max-width: var.$mobile) {
+      margin-top: 16px;
+    }
+
+    p {
+      @media (max-width: var.$tablet) {
+        font-size: 15px;
+      }
+      @media (max-width: var.$mobile) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  // ────────────────────────────────────────────
+  // Summary Panel (반응형 추가)
+  // ────────────────────────────────────────────
+
+  .cart-summary {
+    @media (max-width: var.$tablet) {
+      position: static; // sticky 해제 (1컬럼이므로)
+      padding: 24px 20px;
+    }
+
+    @media (max-width: var.$mobile) {
+      padding: 20px 16px;
+      border-radius: 8px;
+    }
+
+    &__title {
+      @media (max-width: var.$tablet) {
+        font-size: 24px; // 섹션 제목 tablet 명세
+      }
+      @media (max-width: var.$mobile) {
+        font-size: 20px; // 섹션 제목 mobile 명세
+        margin-bottom: 16px;
+      }
+    }
+
+    &__row {
+      .label,
+      .value {
+        @media (max-width: var.$tablet) {
+          font-size: 15px;
+        }
+        @media (max-width: var.$mobile) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &__total {
+      .value {
+        @media (max-width: var.$mobile) {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &__btn {
+      @media (max-width: var.$tablet) {
+        font-size: 15px;
+      }
+      @media (max-width: var.$mobile) {
+        font-size: 14px;
+        padding: 12px;
+      }
+    }
+  }
+
+  // ────────────────────────────────────────────
+  // Empty State (반응형 추가)
+  // ────────────────────────────────────────────
+
+  .cart-empty {
+    @media (max-width: var.$tablet) {
+      padding: 80px 40px;
+    }
+    @media (max-width: var.$mobile) {
+      padding: 60px 20px;
+      gap: 16px;
+    }
+
+    &__title {
+      @media (max-width: var.$tablet) {
+        font-size: 24px;
+      }
+      @media (max-width: var.$mobile) {
+        font-size: 20px;
+      }
+    }
+
+    &__desc,
+    &__btn {
+      @media (max-width: var.$tablet) {
+        font-size: 15px;
+      }
+      @media (max-width: var.$mobile) {
+        font-size: 14px;
+      }
+    }
+  }
 }

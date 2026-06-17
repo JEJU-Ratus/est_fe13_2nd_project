@@ -581,4 +581,256 @@ body {
 }
 .cta-banner .cta-btn:hover {
   background-color: #162e93;
+}
+
+@media (max-width: 1024px) {
+  .content-wrapper {
+    max-width: 768px;
+    padding: 32px 40px;
+  }
+  .hero-section {
+    padding: 32px 0 80px;
+  }
+  .hero-section .main-title {
+    font-size: 36px;
+    line-height: 1.25;
+  }
+  .hero-section .desc {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .hero-section .search-bar-container {
+    max-width: 100%;
+  }
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 80px;
+  }
+  .chat-card {
+    height: 460px;
+  }
+  .chat-card .chat-header .chat-user-info .chat-title {
+    font-size: 16px;
+  }
+  .chat-card .quick-buttons {
+    flex-wrap: wrap;
+  }
+  .my-status-card .status-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .my-status-card .status-content .status-item {
+    margin-bottom: 0;
+  }
+  .my-status-card .status-footer-btns {
+    grid-template-columns: 1fr 1fr;
+  }
+  .top-queries-section {
+    margin-bottom: 80px;
+  }
+  .top-queries-section .section-title {
+    font-size: 24px;
+    line-height: 1.35;
+  }
+  .top-queries-section .top-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .faq-section .faq-header-flex .section-title {
+    font-size: 24px;
+    line-height: 1.35;
+  }
+  .faq-section .faq-tabs {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .faq-section .faq-list .faq-item .faq-question {
+    padding: 16px 20px;
+  }
+  .faq-section .faq-list .faq-item .faq-question .q-text {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .cta-banner {
+    margin-top: 80px;
+    padding: 24px 28px;
+  }
+}
+@media (max-width: 480px) {
+  .content-wrapper {
+    max-width: 100%;
+    padding: 24px 20px;
+  }
+  .hero-section {
+    padding: 24px 0 60px;
+  }
+  .hero-section .sub-title {
+    font-size: 11px;
+  }
+  .hero-section .main-title {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+  .hero-section .desc {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .hero-section .search-bar-container {
+    max-width: 100%;
+  }
+  .hero-section .search-bar-container input {
+    font-size: 14px;
+    padding: 14px 18px 14px 44px;
+  }
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 60px;
+  }
+  .chat-card {
+    height: 420px;
+    padding: 20px;
+  }
+  .chat-card .chat-header .chat-user-info .chat-title {
+    font-size: 15px;
+  }
+  .chat-card .chat-header .speed-tag {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+  .chat-card .chat-messages .message {
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 10px 14px;
+  }
+  .chat-card .quick-buttons {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .chat-card .quick-buttons .quick-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+  .chat-card .chat-input-container input {
+    font-size: 14px;
+  }
+  .chat-card .chat-input-container button {
+    padding: 0 14px;
+    font-size: 13px;
+  }
+  .my-status-card {
+    padding: 20px;
+  }
+  .my-status-card .status-header h4 {
+    font-size: 15px;
+  }
+  .my-status-card .status-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .my-status-card .status-content .status-item {
+    margin-bottom: 12px;
+  }
+  .my-status-card .status-content .status-item .item-title,
+  .my-status-card .status-content .status-item .item-body strong,
+  .my-status-card .status-content .status-item .item-body span {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .my-status-card .status-footer-btns {
+    gap: 8px;
+  }
+  .my-status-card .status-footer-btns .footer-sub-btn,
+  .my-status-card .status-footer-btns .footer-main-btn {
+    font-size: 13px;
+    padding: 10px;
+  }
+  .top-queries-section {
+    margin-bottom: 60px;
+  }
+  .top-queries-section .section-title {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  .top-queries-section .top-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .top-queries-section .top-grid .top-card {
+    padding: 16px;
+  }
+  .top-queries-section .top-grid .top-card .num {
+    font-size: 18px;
+  }
+  .top-queries-section .top-grid .top-card h5 {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .top-queries-section .top-grid .top-card p {
+    font-size: 12px;
+  }
+  .faq-section .faq-header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .faq-section .faq-header-flex .section-title {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  .faq-section .faq-header-flex .faq-tip {
+    font-size: 13px;
+  }
+  .faq-section .faq-tabs {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .faq-section .faq-tabs .tab-btn {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+  .faq-section .faq-list {
+    gap: 10px;
+  }
+  .faq-section .faq-list .faq-item .faq-question {
+    padding: 14px 16px;
+  }
+  .faq-section .faq-list .faq-item .faq-question .badge {
+    font-size: 10px;
+    padding: 2px 6px;
+    margin-right: 10px;
+  }
+  .faq-section .faq-list .faq-item .faq-question .q-text {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .faq-section .faq-list .faq-item .faq-answer p {
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 16px;
+  }
+  .cta-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 60px;
+    padding: 20px;
+  }
+  .cta-banner .cta-text h4 {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+  .cta-banner .cta-text p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .cta-banner .cta-btn {
+    width: 100%;
+    text-align: center;
+    padding: 13px 0;
+    font-size: 14px;
+  }
 }/*# sourceMappingURL=support.css.map */
