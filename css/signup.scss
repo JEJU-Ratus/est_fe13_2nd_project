@@ -9,8 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding-top: 96px;
+  min-height: calc(100vh - 64px);
 }
 
 // 회원가입 카드
@@ -54,22 +53,21 @@
       padding: 12px 14px;
       border: 1.5px solid clr.$color-border;
       border-radius: 8px;
-      font-size: 16px;
-      font-weight: var.$weight-regular;
-      line-height: 1.6;
+      @include typo.font-s(var.$weight-regular);
       color: clr.$color-text;
-      background-color: clr.$color-background;
+      background-color: clr.$color-white;
       outline: none;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
 
       &::placeholder {
-        color: clr.$color-border-light;
+        color: clr.$color-muted;
       }
 
       &:focus {
         border-color: clr.$color-primary;
         box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        background-color: clr.$color-white;
       }
     }
   }
@@ -84,7 +82,9 @@
       color: clr.$color-primary;
       font-weight: var.$weight-regular;
       transition: opacity 0.15s ease;
-      &:hover { opacity: 0.75; }
+      &:hover {
+        opacity: 0.75;
+      }
     }
   }
 
@@ -97,10 +97,16 @@
     color: clr.$color-white;
     @include typo.font-s(var.$weight-medium);
     border-radius: 6px;
-    transition: background-color 0.15s ease, transform 0.1s;
+    transition:
+      background-color 0.15s ease,
+      transform 0.1s;
 
-    &:hover  { background-color: clr.$color-primary-dark; }
-    &:active { transform: scale(0.99); }
+    &:hover {
+      background-color: clr.$color-primary-dark;
+    }
+    &:active {
+      transform: scale(0.99);
+    }
   }
 
   // 로그인 안내
@@ -114,7 +120,9 @@
       color: clr.$color-primary;
       font-weight: var.$weight-medium;
       transition: opacity 0.15s ease;
-      &:hover { opacity: 0.75; }
+      &:hover {
+        opacity: 0.75;
+      }
     }
   }
 
@@ -134,34 +142,54 @@
 // 태블릿 (~ 1199px)
 @media (max-width: 1199px) {
   .signup-main {
-    padding: 96px 40px 0;
+    height: auto;
+    min-height: calc(100vh - 64px);
   }
 
   .signup-card {
     padding: 16px 40px;
 
-    .signup-heading { font-size: 24px; }
+    .signup-heading {
+      font-size: 24px;
+    }
   }
 }
 
 // 모바일 (~ 767px)
 @media (max-width: 767px) {
   .signup-main {
+    height: auto;
+    min-height: calc(100vh - 64px);
     align-items: flex-start;
-    padding: 40px 20px 0;
   }
 
   .signup-card {
     padding: 16px 20px;
     max-width: 100%;
 
-    .signup-heading { font-size: 20px; }
-    .signup-subheading { @include typo.font-xs(var.$weight-regular); }
-    .form-group { margin-bottom: 16px; }
-    .form-group .form-label { @include typo.font-xs(var.$weight-medium); }
-    .form-group .form-input { @include typo.font-xs(var.$weight-regular); }
-    .terms-text { @include typo.font-xs(var.$weight-regular); }
-    .btn-signup { @include typo.font-xs(var.$weight-medium); }
-    .login-row { @include typo.font-xs(var.$weight-regular); }
+    .signup-heading {
+      font-size: 20px;
+    }
+    .signup-subheading {
+      @include typo.font-xs(var.$weight-regular);
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group .form-label {
+      @include typo.font-xs(var.$weight-medium);
+    }
+    .form-group .form-input {
+      @include typo.font-xs(var.$weight-regular);
+    }
+    .terms-text {
+      @include typo.font-xs(var.$weight-regular);
+    }
+    .btn-signup {
+      @include typo.font-xs(var.$weight-medium);
+    }
+    .login-row {
+      @include typo.font-xs(var.$weight-regular);
+    }
   }
 }
