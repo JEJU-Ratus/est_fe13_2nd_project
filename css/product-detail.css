@@ -1,8 +1,26 @@
-@charset "UTF-8";
 .product-detail-container {
-  max-width: 600px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 8px 16px 16px 16px;
+  transition: all 0.3s ease;
+}
+@media (min-width: 768px) {
+  .product-detail-container {
+    max-width: 768px;
+    padding: 24px 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .product-detail-container {
+    max-width: 1200px;
+    padding: 40px 80px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .product-detail-container > section {
+    flex: 1;
+  }
 }
 .product-detail-container > section {
   margin: 0;
@@ -160,7 +178,6 @@
   font-weight: 400;
   line-height: 1.5;
   color: rgba(24, 24, 27, 0.9);
-  margin-bottom: 0;
 }
 .product-detail-container .brand-benefits .benefit-item .benefit-desc {
   font-family: "Inter", sans-serif;
@@ -168,7 +185,6 @@
   font-weight: 400;
   line-height: 1.5;
   color: rgba(24, 24, 27, 0.6);
-  margin-top: 0;
 }
 .product-detail-container .product-info-section .brand-name {
   font-size: 16px;
@@ -185,6 +201,16 @@
   line-height: 1.4;
   color: rgba(24, 24, 27, 0.9);
   margin-bottom: 12px;
+}
+@media (min-width: 768px) {
+  .product-detail-container .product-info-section .product-title {
+    font-size: 36px;
+  }
+}
+@media (min-width: 1200px) {
+  .product-detail-container .product-info-section .product-title {
+    font-size: 48px;
+  }
 }
 .product-detail-container .product-info-section .rating-group {
   display: flex;
@@ -289,23 +315,6 @@
   flex-direction: column;
   gap: 12px;
 }
-.product-detail-container .product-info-section .action-button-group .btn-primary,
-.product-detail-container .product-info-section .action-button-group .btn-secondary {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.product-detail-container .product-info-section .action-button-group .btn-primary:active,
-.product-detail-container .product-info-section .action-button-group .btn-secondary:active {
-  transform: scale(0.97);
-  filter: brightness(0.9);
-}
-.product-detail-container .product-info-section .action-button-group .btn-primary .material-symbols-outlined,
-.product-detail-container .product-info-section .action-button-group .btn-secondary .material-symbols-outlined {
-  font-size: 1em;
-  margin-right: 8px;
-}
 .product-detail-container .product-info-section .action-button-group .btn-primary {
   width: 100%;
   height: 56px;
@@ -350,7 +359,6 @@
 .product-detail-container .product-specs-section .specs-heading {
   padding: 16px 20px;
   border-bottom: 1.5px solid #d4d4d8;
-  background: #f4f4f5;
   font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -370,12 +378,6 @@
   border-right: 1.5px solid #d4d4d8;
 }
 .product-detail-container .product-specs-section .specs-list .spec-item:nth-child(2n) {
-  border-right: none;
-}
-.product-detail-container .product-specs-section .specs-list .spec-item:nth-last-child(-n+2) {
-  border-bottom: none;
-}
-.product-detail-container .product-specs-section .specs-list .spec-item:last-child:nth-child(odd) {
   border-right: none;
 }
 .product-detail-container .product-specs-section .specs-list .spec-item dt {
@@ -405,7 +407,6 @@
     transform: scale(1);
   }
 }
-/* 알림창 & 모달 스타일 */
 .toast {
   position: fixed;
   bottom: 24px;
