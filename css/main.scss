@@ -2,10 +2,11 @@
 @use "./variables" as var;
 @use "./colors" as clr;
 /* 메인 페이지, Hero Section 스타일링 - 최수민 & 송민혁 */
+
 .hero-section {
   padding: 120px 80px 50px;
   text-align: center;
-  background-color: clr.$color-background;
+  background-color: #f6f4f1;
   .hero-wrapper {
     margin: 0 auto;
     max-width: var.$desktop;
@@ -26,7 +27,7 @@
 .hero-section .hero-title {
   margin: 24px 0;
   font-size: 48px;
-  font-weight: var.$weight-medium;
+  font-weight: var.$weight-bold;
   line-height: 1.2;
   color: clr.$color-title;
   .text-primary {
@@ -93,11 +94,33 @@
     }
   }
 }
+@media (max-width: 1199px) {
+  .hero-section {
+    padding: 60px 40px 25px;
+    .hero-wrapper {
+      max-width: var.$tablet;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .hero-section {
+    padding: 30px 20px 12px;
+    .hero-wrapper {
+      max-width: var.$mobile;
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+    }
+  }
+}
 // --------------------------------------- 상품 섹션
 .product-section {
-  background: clr.$color-white;
-  padding: 110px 80px 120px;
-
+  padding: 0 80px;
+  margin-top: 120px;
+  &.all-eyewear {
+    padding-bottom: 104px;
+  }
   .product-wrapper {
     max-width: var.$desktop;
     margin: 0 auto;
@@ -117,7 +140,7 @@
 }
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-top: 30px;
 
@@ -135,9 +158,15 @@
       }
       .badge {
         position: absolute;
-        top: 0;
+        top: 12px;
+        left: 12px;
+        padding: 2px 8px;
+        border-radius: 5px;
+        color: clr.$color-white;
 
-        .new-badge {
+        @include typo.font-xs();
+        &.new-badge {
+          background: clr.$color-primary;
         }
       }
 
@@ -168,6 +197,15 @@
           height: 20px;
           border-radius: 50%;
         }
+        .silver {
+          background: clr.$color-silver;
+        }
+        .yellow {
+          background: clr.$color-yellow;
+        }
+        .brown {
+          background: clr.$color-brown;
+        }
       }
       .product-price-area {
         display: flex;
@@ -185,6 +223,37 @@
 .product-section .product-grid .product-card:hover .product-image-area img {
   transform: scale(1.05);
 }
+@media (max-width: 1199px) {
+  .product-section {
+    padding: 0 40px;
+    margin-top: 90px;
+    &.all-eyewear {
+      padding-bottom: 60px;
+    }
+    .product-wrapper {
+      max-width: var.$tablet;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .product-section {
+    padding: 0 20px;
+    margin-top: 60px;
+    &.all-eyewear {
+      padding-bottom: 30px;
+    }
+    .product-wrapper {
+      max-width: var.$tablet;
+    }
+    .product-name {
+      @include typo.font-s(var.$weight-bold);
+    }
+  }
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 // 스켈레톤 ui------------------------------------------
 .skeleton {
   position: relative;
@@ -221,9 +290,4 @@
 .skeleton-line {
   height: 12px;
   border-radius: 6px;
-}
-@media (max-width: 767px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }

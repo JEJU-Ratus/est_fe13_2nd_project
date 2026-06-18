@@ -3,7 +3,7 @@
 .hero-section {
   padding: 120px 80px 50px;
   text-align: center;
-  background-color: rgba(249, 248, 246, 0.9);
+  background-color: #f6f4f1;
 }
 .hero-section .hero-wrapper {
   margin: 0 auto;
@@ -27,7 +27,7 @@
 .hero-section .hero-title {
   margin: 24px 0;
   font-size: 48px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.2;
   color: rgba(24, 24, 27, 0.9);
 }
@@ -94,9 +94,31 @@
   text-transform: uppercase;
 }
 
+@media (max-width: 1199px) {
+  .hero-section {
+    padding: 60px 40px 25px;
+  }
+  .hero-section .hero-wrapper {
+    max-width: 768px;
+  }
+}
+@media (max-width: 767px) {
+  .hero-section {
+    padding: 30px 20px 12px;
+  }
+  .hero-section .hero-wrapper {
+    max-width: 430px;
+  }
+  .hero-section .hero-wrapper .hero-buttons {
+    flex-direction: column;
+  }
+}
 .product-section {
-  background: #ffffff;
-  padding: 110px 80px 120px;
+  padding: 0 80px;
+  margin-top: 120px;
+}
+.product-section.all-eyewear {
+  padding-bottom: 104px;
 }
 .product-section .product-wrapper {
   max-width: 1200px;
@@ -115,7 +137,7 @@
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   margin-top: 30px;
 }
@@ -133,7 +155,18 @@
 }
 .product-grid .product-card .product-image-area .badge {
   position: absolute;
-  top: 0;
+  top: 12px;
+  left: 12px;
+  padding: 2px 8px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.product-grid .product-card .product-image-area .badge.new-badge {
+  background: #2563eb;
 }
 .product-grid .product-card .product-image-area img {
   width: 100%;
@@ -162,6 +195,15 @@
   height: 20px;
   border-radius: 50%;
 }
+.product-grid .product-card .product-info .color-options .silver {
+  background: #e4e4e7;
+}
+.product-grid .product-card .product-info .color-options .yellow {
+  background: #ffd700;
+}
+.product-grid .product-card .product-info .color-options .brown {
+  background: #8b4513;
+}
 .product-grid .product-card .product-info .product-price-area {
   display: flex;
   align-items: center;
@@ -175,6 +217,39 @@
   transform: scale(1.05);
 }
 
+@media (max-width: 1199px) {
+  .product-section {
+    padding: 0 40px;
+    margin-top: 90px;
+  }
+  .product-section.all-eyewear {
+    padding-bottom: 60px;
+  }
+  .product-section .product-wrapper {
+    max-width: 768px;
+  }
+}
+@media (max-width: 767px) {
+  .product-section {
+    padding: 0 20px;
+    margin-top: 60px;
+  }
+  .product-section.all-eyewear {
+    padding-bottom: 30px;
+  }
+  .product-section .product-wrapper {
+    max-width: 768px;
+  }
+  .product-section .product-name {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 .skeleton {
   position: relative;
   overflow: hidden;
@@ -207,10 +282,4 @@
 .skeleton-line {
   height: 12px;
   border-radius: 6px;
-}
-
-@media (max-width: 767px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }/*# sourceMappingURL=main.css.map */

@@ -145,7 +145,7 @@ body {
 .footer-wrapper {
   margin: 0 auto;
   max-width: var.$desktop;
-  padding: 120px 80px 0;
+  padding: 0 80px;
   @include typo.font-xs();
 
   h2 {
@@ -249,7 +249,7 @@ body {
   }
 
   .company-info dl {
-    grid-template-columns: 0.3fr 2fr;
+    grid-template-columns: 0.5fr 2fr;
     gap: 8px 16px;
   }
 
