@@ -250,6 +250,7 @@ body {
 
 @media (max-width: 1199px) {
   .footer-wrapper {
+    padding: 0 40px;
     max-width: 1200px;
   }
 }
