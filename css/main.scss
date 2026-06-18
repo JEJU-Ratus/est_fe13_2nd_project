@@ -98,7 +98,7 @@
   .hero-section {
     padding: 60px 40px 25px;
     .hero-wrapper {
-      max-width: var.$tablet;
+      max-width: var.$desktop;
     }
   }
 }
@@ -106,7 +106,7 @@
   .hero-section {
     padding: 30px 20px 12px;
     .hero-wrapper {
-      max-width: var.$mobile;
+      max-width: var.$tablet;
 
       .hero-buttons {
         flex-direction: column;
@@ -117,14 +117,12 @@
 // --------------------------------------- 상품 섹션
 .product-section {
   padding: 0 80px;
-  margin-top: 120px;
+  max-width: var.$desktop;
+  margin: 120px auto 0;
   &.all-eyewear {
     padding-bottom: 104px;
   }
   .product-wrapper {
-    max-width: var.$desktop;
-    margin: 0 auto;
-
     .section-title {
       margin-bottom: 16px;
     }
@@ -239,13 +237,11 @@
 }
 @media (max-width: 1199px) {
   .product-section {
+    max-width: var.$tablet;
     padding: 0 40px;
     margin-top: 90px;
     &.all-eyewear {
       padding-bottom: 60px;
-    }
-    .product-wrapper {
-      max-width: var.$tablet;
     }
   }
 }
@@ -253,12 +249,11 @@
   .product-section {
     padding: 0 20px;
     margin-top: 60px;
+    max-width: var.$tablet;
     &.all-eyewear {
       padding-bottom: 30px;
     }
-    .product-wrapper {
-      max-width: var.$tablet;
-    }
+
     .product-name {
       @include typo.font-s(var.$weight-bold);
     }

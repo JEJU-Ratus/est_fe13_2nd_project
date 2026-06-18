@@ -78,6 +78,37 @@ body {
   display: flex;
   gap: 20px;
   @include typo.font-s(var.$weight-bold);
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  a {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -18px;
+      width: 100%;
+      height: 2px;
+      background: clr.$color-primary;
+      transform: scaleX(0);
+      transition: transform 0.2s ease;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
+  }
 }
 
 .header-wrapper .header-actions {
@@ -97,13 +128,13 @@ body {
 
 @media (max-width: 1199px) {
   .header-wrapper {
-    max-width: var.$tablet;
+    max-width: var.$desktop;
     padding: 20px 40px;
   }
 }
 @media (max-width: 767px) {
   .header-wrapper {
-    max-width: var.$mobile;
+    max-width: var.$tablet;
     padding: 20px 20px;
     .gnb,
     .header-actions {
@@ -223,8 +254,14 @@ body {
     color: clr.$color-muted;
   }
 }
+@media (max-width: 1199px) {
+  .footer-wrapper {
+    max-width: var.$desktop;
+  }
+}
 @media (max-width: 767px) {
   .footer-wrapper {
+    max-width: var.$tablet;
     @include typo.font-2xs();
     padding: 48px 16px 0;
   }

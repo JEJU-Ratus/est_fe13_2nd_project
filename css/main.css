@@ -99,7 +99,7 @@
     padding: 60px 40px 25px;
   }
   .hero-section .hero-wrapper {
-    max-width: 768px;
+    max-width: 1200px;
   }
 }
 @media (max-width: 767px) {
@@ -107,7 +107,7 @@
     padding: 30px 20px 12px;
   }
   .hero-section .hero-wrapper {
-    max-width: 430px;
+    max-width: 768px;
   }
   .hero-section .hero-wrapper .hero-buttons {
     flex-direction: column;
@@ -115,14 +115,11 @@
 }
 .product-section {
   padding: 0 80px;
-  margin-top: 120px;
+  max-width: 1200px;
+  margin: 120px auto 0;
 }
 .product-section.all-eyewear {
   padding-bottom: 104px;
-}
-.product-section .product-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
 }
 .product-section .product-wrapper .section-title {
   margin-bottom: 16px;
@@ -232,26 +229,22 @@
 
 @media (max-width: 1199px) {
   .product-section {
+    max-width: 768px;
     padding: 0 40px;
     margin-top: 90px;
   }
   .product-section.all-eyewear {
     padding-bottom: 60px;
   }
-  .product-section .product-wrapper {
-    max-width: 768px;
-  }
 }
 @media (max-width: 767px) {
   .product-section {
     padding: 0 20px;
     margin-top: 60px;
+    max-width: 768px;
   }
   .product-section.all-eyewear {
     padding-bottom: 30px;
-  }
-  .product-section .product-wrapper {
-    max-width: 768px;
   }
   .product-section .product-name {
     font-family: "Inter", sans-serif;
