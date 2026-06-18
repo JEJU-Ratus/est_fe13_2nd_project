@@ -43,10 +43,10 @@
 
   // 폼 그룹 (라벨 + 인풋 묶음)
   .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
 
     // 인풋 라벨
     .form-label {
