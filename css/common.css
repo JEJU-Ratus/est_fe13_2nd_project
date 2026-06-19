@@ -59,11 +59,14 @@ body {
   backdrop-filter: blur(10px);
 }
 
+.header-container {
+  padding: 20px 80px;
+}
+
 .header-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 80px;
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -132,15 +135,19 @@ body {
 }
 
 @media (max-width: 1199px) {
+  .header-container {
+    padding: 20px 40px;
+  }
   .header-wrapper {
     max-width: 1200px;
-    padding: 20px 40px;
   }
 }
 @media (max-width: 767px) {
+  .header-container {
+    padding: 20px 20px;
+  }
   .header-wrapper {
     max-width: 768px;
-    padding: 20px 20px;
   }
   .header-wrapper .gnb,
   .header-wrapper .header-actions {
@@ -182,6 +189,7 @@ main {
   }
 }
 .footer-wrapper {
+  box-sizing: content-box !important;
   margin: 0 auto;
   max-width: 1200px;
   padding: 0 80px;

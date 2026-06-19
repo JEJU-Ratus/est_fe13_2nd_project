@@ -62,11 +62,13 @@ body {
   background: rgba(#e4e4e7, 0.5);
   backdrop-filter: blur(10px);
 }
+.header-container {
+  padding: 20px 80px;
+}
 .header-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 80px;
   max-width: var.$desktop;
   margin: 0 auto;
   box-sizing: border-box;
@@ -135,15 +137,19 @@ body {
 }
 
 @media (max-width: 1199px) {
+  .header-container {
+    padding: 20px 40px;
+  }
   .header-wrapper {
     max-width: var.$desktop;
-    padding: 20px 40px;
   }
 }
 @media (max-width: 767px) {
+  .header-container {
+    padding: 20px 20px;
+  }
   .header-wrapper {
     max-width: var.$tablet;
-    padding: 20px 20px;
     .gnb,
     .header-actions {
       display: none;
@@ -191,6 +197,7 @@ main {
 }
 // -----------------------------footer -송민혁
 .footer-wrapper {
+  box-sizing: content-box !important;
   margin: 0 auto;
   max-width: var.$desktop;
   padding: 0 80px;
