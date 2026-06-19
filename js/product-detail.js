@@ -1,6 +1,4 @@
-const API = "./data/product.json";
-
-//토스트 메시지
+// 토스트 메시지 함수
 function showToast(message) {
   const toast = document.querySelector("#toast");
   if (!toast) return;
@@ -11,66 +9,13 @@ function showToast(message) {
   }, 2000);
 }
 
-// URL에서 id로 상품 찾아서 정보 적용
-async function loadProductDetail() {
-  const params = new URLSearchParams(window.location.search);
-  const productId = Number(params.get("id"));
-
-  if (!productId) {
-    console.error("URL에 id 파라미터가 없습니다.");
-    return;
-  }
-
-  const res = await fetch(API);
-  const { products } = await res.json();
-  const product = products.find(p => p.id === productId);
-
-  if (!product) {
-    console.error("해당 상품을 찾을 수 없습니다. id:", productId);
-    return;
-  }
-
-  // 메인 이미지 교체
-  const mainImg = document.querySelector(".main-img");
-  if (mainImg) {
-    mainImg.src = product.thumbnail;
-    mainImg.alt = product.title;
-  }
-
-  // 첫 번째 썸네일 이미지 교체
-  const firstThumbnailImg = document.querySelector(".thumbnail-item:first-child img");
-  if (firstThumbnailImg) {
-    firstThumbnailImg.src = product.thumbnail;
-    firstThumbnailImg.alt = product.title;
-  }
-
-  // 브랜드명
-  const brandName = document.querySelector(".brand-name");
-  if (brandName) brandName.textContent = product.brand;
-
-  // 상품명 (breadcrumb + 타이틀)
-  const productTitle = document.querySelector(".product-title");
-  if (productTitle) productTitle.textContent = product.title;
-
-  const breadcrumbCurrent = document.querySelector(".breadcrumb [aria-current='page']");
-  if (breadcrumbCurrent) breadcrumbCurrent.textContent = product.title;
-
-  // 가격 (sale 관련 .original-price, .discount-rate 는 건드리지 않음)
-  const currentPrice = document.querySelector(".current-price");
-  if (currentPrice) currentPrice.textContent = `${product.price.toLocaleString()}원`;
-
-  // 페이지 타이틀
-  document.title = `ROUNZ | ${product.title}`;
-}
-
 function initProductDetail() {
-  // 1. 하트 버튼 초기화
+  // 1. 즐겨찾기 버튼
   const wishBtn = document.querySelector(".btn-wish");
   if (wishBtn) {
     wishBtn.addEventListener("click", () => {
       const heartIcon = wishBtn.querySelector(".heart-icon");
       const isActive = wishBtn.classList.toggle("is-active");
-
       if (heartIcon) {
         heartIcon.textContent = "favorite";
         heartIcon.style.fontVariationSettings = isActive
@@ -85,7 +30,7 @@ function initProductDetail() {
   const mainImg = document.querySelector(".main-img");
   const thumbnails = document.querySelectorAll(".thumbnail-item");
   if (mainImg && thumbnails.length > 0) {
-    thumbnails.forEach(thumbnail => {
+    thumbnails.forEach((thumbnail) => {
       thumbnail.addEventListener("click", () => {
         document.querySelector(".thumbnail-item.active")?.classList.remove("active");
         thumbnail.classList.add("active");
@@ -96,19 +41,15 @@ function initProductDetail() {
   }
 
   // 3. 컬러 칩 선택 기능
-  let selectedColor = "기본";
+  let selectedColor = "기본"; // 선택된 컬러를 저장할 변수
   const colorChips = document.querySelectorAll(".chip");
   if (colorChips.length > 0) {
-    colorChips.forEach(chip => {
+    colorChips.forEach((chip) => {
       chip.addEventListener("click", () => {
         document.querySelector(".chip.active")?.classList.remove("active");
         chip.classList.add("active");
-        const colorName = chip.classList.contains("chip-grey")
-          ? "그레이"
-          : chip.classList.contains("chip-yellow")
-            ? "옐로우"
-            : "블랙";
-        // console.log(`선택된 컬러: ${colorName}`);
+        selectedColor = chip.getAttribute("aria-label")?.replace(" 컬러 선택", "") || "기본";
+        console.log(`선택된 컬러: ${selectedColor}`);
       });
     });
   }
@@ -120,6 +61,7 @@ function initProductDetail() {
   const modal = document.querySelector("#tryon-modal");
   const closeModalBtn = document.querySelector(".close-modal");
 
+  // 5. 장바구니 모달 관련 요소
   const cartConfirmModal = document.querySelector("#cart-confirm-modal");
   const goToCartBtn = document.querySelector("#go-to-cart");
   const closeCartModalBtn = document.querySelector("#close-cart-modal");
@@ -127,25 +69,23 @@ function initProductDetail() {
   tryOnBtn?.addEventListener("click", () => modal?.classList.add("open"));
   closeModalBtn?.addEventListener("click", () => modal?.classList.remove("open"));
 
+  // 장바구니 버튼 (확인창 + 데이터 추출)
   cartBtn?.addEventListener("click", () => {
+    // A. URL 파라미터에서 현재 상품 ID 추출 (형규님이 구현한 파라미터 활용)
     const params = new URLSearchParams(window.location.search);
-    const productId = params.get("id") || "default-id";
+    const productId = params.get("id") || "default-id"; // ID가 없으면 기본값
 
-    const productBrand = document.querySelector(".brand-name")?.textContent ?? ""; // 추가
-    const productName = document.querySelector(".product-title")?.textContent;
-    const productPrice = document.querySelector(".current-price")?.textContent;
-    const productImage = document.querySelector(".main-img")?.getAttribute("src");
+    // B. 상품 정보 추출
+    const productName = document.querySelector(".product-title").textContent;
+    const productPrice = document.querySelector(".current-price").textContent;
+    const productImage = document.querySelector(".main-img").getAttribute("src");
 
-    if (!productName || !productPrice || !productImage) {
-      showToast("상품 정보를 불러오지 못했습니다.");
-      return;
-    }
-
+    // C. 가격 정제 (숫자만 추출)
     const numericPrice = parseInt(productPrice.replace(/[^0-9]/g, ""), 10);
 
+    // D. 저장할 데이터 객체 생성 (이제 동적 ID 사용!)
     const cartItem = {
       id: productId,
-      brand: productBrand, // 추가
       name: productName,
       price: numericPrice,
       image: productImage,
@@ -153,11 +93,11 @@ function initProductDetail() {
       quantity: 1,
     };
 
+    // 로컬스토리지 저장
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    const existingItemIndex = cart.findIndex(
-      item => item.id === cartItem.id && item.color === cartItem.color,
-    );
+    // 이미 담긴 상품인지 확인
+    const existingItemIndex = cart.findIndex((item) => item.id === cartItem.id && item.color === cartItem.color);
     if (existingItemIndex > -1) {
       cart[existingItemIndex].quantity += 1;
     } else {
@@ -165,11 +105,14 @@ function initProductDetail() {
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
+
     console.log("장바구니에 담긴 데이터:", cartItem);
 
+    // confirm 대신 모달 띄우기
     cartConfirmModal?.classList.add("open");
   });
 
+  // 모달 제어 이벤트
   goToCartBtn?.addEventListener("click", () => {
     window.location.href = "cart.html";
   });
@@ -179,13 +122,21 @@ function initProductDetail() {
     showToast("장바구니에 상품이 담겼습니다.");
   });
 
+  // 구매하기 버튼
   buyBtn?.addEventListener("click", () => {
     console.log("구매 페이지로 이동 로직 실행");
   });
 }
 
-// DOMContentLoaded에서 둘 다 실행
-document.addEventListener("DOMContentLoaded", () => {
-  loadProductDetail();
-  initProductDetail();
-});
+// AI 가상 피팅 모달 취소 버튼 기능 강제 연결
+const closeTryonBtn = document.getElementById("close-tryon-modal");
+const tryonModal = document.getElementById("tryon-modal");
+
+if (closeTryonBtn) {
+  closeTryonBtn.addEventListener("click", () => {
+    if (tryonModal) {
+      tryonModal.classList.remove("open"); // 모달 닫기
+    }
+  });
+}
+document.addEventListener("DOMContentLoaded", initProductDetail);

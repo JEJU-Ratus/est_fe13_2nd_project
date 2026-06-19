@@ -4,27 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ROUNZ | 상품 상세</title>
-
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/common.css" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-
     <link rel="stylesheet" href="css/product-detail.css" />
   </head>
   <body>
     <header id="header"></header>
-
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <ol>
         <li><a href="#">Home</a></li>
@@ -32,10 +25,8 @@
         <li aria-current="page">Classic Aviator</li>
       </ol>
     </nav>
-
     <main class="product-detail-container">
       <section class="product-gallery">
-        <h2 class="sr-only">상품 이미지</h2>
         <div class="main-image-wrap">
           <div class="badge-group">
             <span class="badge badge-new">NEW</span>
@@ -47,43 +38,41 @@
           <img src="img/product-main.png" alt="Classic Aviator 정면 컷" class="main-img" />
         </div>
         <ul class="thumbnail-list">
-          <li class="thumbnail-item active">
-            <img src="img/product-main.png" alt="상품 메인 컷" />
-          </li>
-          <li class="thumbnail-item">
-            <img src="img/product-thumb1.png" alt="모델 컷 1" />
-          </li>
-          <li class="thumbnail-item">
-            <img src="img/product-thumb2.png" alt="모델 컷 2" />
-          </li>
-          <li class="thumbnail-item">
-            <img src="img/product-thumb3.png" alt="모델 컷 3" />
-          </li>
+          <li class="thumbnail-item active"><img src="img/product-main.png" alt="상품 메인 컷" /></li>
+          <li class="thumbnail-item"><img src="img/product-thumb1.png" alt="모델 컷 1" /></li>
+          <li class="thumbnail-item"><img src="img/product-thumb2.png" alt="모델 컷 2" /></li>
+          <li class="thumbnail-item"><img src="img/product-thumb3.png" alt="모델 컷 3" /></li>
         </ul>
+        <section class="brand-benefits">
+          <div class="benefit-item">
+            <div class="icon-circle"><span class="material-symbols-outlined">local_shipping</span></div>
+            <strong class="benefit-title">무료배송</strong><span class="benefit-desc">5만원 이상</span>
+          </div>
+          <div class="benefit-item">
+            <div class="icon-circle"><span class="material-symbols-outlined">replay</span></div>
+            <strong class="benefit-title">30일 반품</strong><span class="benefit-desc">무료 반품</span>
+          </div>
+          <div class="benefit-item">
+            <div class="icon-circle"><span class="material-symbols-outlined">shield</span></div>
+            <strong class="benefit-title">정품 보증</strong><span class="benefit-desc">1년 A/S</span>
+          </div>
+        </section>
       </section>
-
       <div class="product-right-col">
         <section class="product-info-section">
           <span class="brand-name">ROUNZ</span>
-          <h1 class="product-title">Classic Aviator</h1>
-
+          <h2 class="product-title">Classic Aviator</h2>
           <div class="rating-group">
-            <div class="stars" role="img" aria-label="별점 4.8점">★★★★★</div>
-            <span class="rating-score">4.8</span>
-            <span class="review-count">(128개 리뷰)</span>
+            <div class="stars" aria-label="별점 4.8점">★★★★★</div>
+            <span class="rating-score">4.8</span><span class="review-count">(128개 리뷰)</span>
           </div>
-
           <div class="price-group">
-            <strong class="current-price">189,000원</strong>
-            <span class="original-price">229,000원</span>
-            <span class="discount-rate">17% OFF</span>
+            <strong class="current-price">189,000원</strong><span class="original-price">229,000원</span
+            ><span class="discount-rate">17% OFF</span>
           </div>
-
           <p class="product-description">
-            고급 메탈 프레임에 반사 방지 코팅을 더한 클래식한 아비에이터 디자인 데일리로 착용하기에
-            제격입니다.
+            고급 메탈 프레임에 반사 방지 코팅을 더한 클래식한 아비에이터 디자인 데일리로 착용하기에 제격입니다.
           </p>
-
           <div class="option-group">
             <span class="option-label">컬러</span>
             <div class="color-chips">
@@ -92,50 +81,21 @@
               <button type="button" class="chip chip-black" aria-label="블랙 컬러 선택"></button>
             </div>
           </div>
-
           <div class="action-button-group">
             <button type="button" class="btn-primary btn-try-on">
-              <span class="material-symbols-outlined">visibility</span>
-              <span class="btn-text">AI 가상 피팅하기 (AI TRY-ON)</span>
+              <span class="material-symbols-outlined">visibility</span
+              ><span class="btn-text">AI 가상 피팅하기 (AI TRY-ON)</span>
             </button>
             <div class="sub-buttons-wrap">
               <button type="button" class="btn-secondary btn-cart">
-                <span class="material-symbols-outlined">local_mall</span>
-                <span class="btn-text">장바구니 담기</span>
+                <span class="material-symbols-outlined">local_mall</span><span class="btn-text">장바구니 담기</span>
               </button>
               <button type="button" class="btn-secondary btn-buy">
-                <span class="material-symbols-outlined">credit_card</span>
-                <span class="btn-text">구매하기</span>
+                <span class="material-symbols-outlined">credit_card</span><span class="btn-text">구매하기</span>
               </button>
             </div>
           </div>
         </section>
-
-        <section class="brand-benefits">
-          <h2 class="sr-only">브랜드 혜택</h2>
-          <div class="benefit-item">
-            <div class="icon-circle">
-              <span class="material-symbols-outlined">local_shipping</span>
-            </div>
-            <strong class="benefit-title">무료배송</strong>
-            <span class="benefit-desc">5만원 이상</span>
-          </div>
-          <div class="benefit-item">
-            <div class="icon-circle">
-              <span class="material-symbols-outlined">replay</span>
-            </div>
-            <strong class="benefit-title">30일 반품</strong>
-            <span class="benefit-desc">무료 반품</span>
-          </div>
-          <div class="benefit-item">
-            <div class="icon-circle">
-              <span class="material-symbols-outlined">shield</span>
-            </div>
-            <strong class="benefit-title">정품 보증</strong>
-            <span class="benefit-desc">1년 A/S</span>
-          </div>
-        </section>
-
         <section class="product-specs-section">
           <div class="specs-box">
             <h2 class="specs-heading">제품 사양</h2>
@@ -181,16 +141,14 @@
         </section>
       </div>
     </main>
-
     <footer id="footer"></footer>
-
     <div id="toast" class="toast"></div>
+
     <div id="tryon-modal" class="modal">
       <div class="modal-content">
-        <button type="button" class="close-modal">&times;</button>
-        <h2>AI 가상 피팅</h2>
-        <div class="modal-body">
-          <p>가상 피팅 환경을 로드 중입니다...</p>
+        <p>AI 가상 피팅<br />가상 피팅 환경을 로드 중입니다...</p>
+        <div class="modal-buttons">
+          <button type="button" id="close-tryon-modal" class="modal-btn cancel">취소</button>
         </div>
       </div>
     </div>
@@ -199,12 +157,11 @@
       <div class="modal-content">
         <p>장바구니에 담겼습니다.<br />장바구니 페이지로 이동할까요?</p>
         <div class="modal-buttons">
-          <button id="go-to-cart" class="modal-btn confirm">이동하기</button>
-          <button id="close-cart-modal" class="modal-btn cancel">계속 쇼핑하기</button>
+          <button id="go-to-cart" class="modal-btn confirm">이동하기</button
+          ><button id="close-cart-modal" class="modal-btn cancel">계속 쇼핑하기</button>
         </div>
       </div>
     </div>
-
     <script type="module" src="./js/common.js"></script>
     <script type="module" src="./js/product-detail.js"></script>
   </body>
