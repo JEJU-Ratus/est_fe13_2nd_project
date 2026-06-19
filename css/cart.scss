@@ -15,7 +15,19 @@ body {
   background-color: clr.$color-background;
   color: clr.$color-text;
 }
-
+main {
+  padding: 0 80px;
+}
+@media (max-width: 1199px) {
+  main {
+    padding: 0 40px;
+  }
+}
+@media (max-width: 767px) {
+  main {
+    padding: 0 20px;
+  }
+}
 // ────────────────────────────────────────────
 // Utility
 // ────────────────────────────────────────────
@@ -31,14 +43,14 @@ body {
 .cart-page {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 80px;
+  padding: 80px 0;
 
   @media (max-width: var.$tablet) {
-    padding: 60px 40px;
+    padding: 60px 0;
   }
 
   @media (max-width: var.$mobile) {
-    padding: 48px 20px;
+    padding: 48px 0;
   }
 }
 

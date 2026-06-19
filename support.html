@@ -13,257 +13,266 @@
   </head>
   <body>
     <header id="header"></header>
-    <main class="content-wrapper">
-      <section class="hero-section">
-        <p class="sub-title">ROUNZ CUSTOMER SUPPORT</p>
-        <h1 class="main-title">무엇을 도와드릴까요?</h1>
-        <p class="desc">
-          안경 관리법, 배송, 교환/반품 등 궁금한 점을 AI 검색으로 빠르게 찾아보세요.
-        </p>
-        <div class="search-bar-container">
-          <span class="search-bar-icon">🔍</span>
-          <input type="text" placeholder="배송, 가상피팅, 렌즈 교환 등 키워드를 등록해 주세요..." />
-        </div>
-      </section>
-
-      <div class="dashboard-grid">
-        <article class="chat-card">
-          <div class="chat-header">
-            <div class="chat-user-info">
-              <span class="live-badge">LIVE</span>
-              <h2 class="chat-title">AI 상담 도우미</h2>
-            </div>
-            <span class="chat-sub-text">인공지능 상담사가 실시간으로 분석해 읽어드립니다.</span>
-            <span class="speed-tag">초고속 AI 답변</span>
-          </div>
-
-          <div class="chat-messages" id="chatMessages">
-            <div class="message system">
-              안녕하세요! 라운즈 AI 챗봇입니다.<br />
-              안경 가상 피팅, 배송, 도수 렌즈 등 무엇이든 물어보세요! 😊
-            </div>
-          </div>
-
-          <div class="quick-buttons">
-            <button class="quick-btn">가상 피팅 안내</button>
-            <button class="quick-btn">알맞은 렌즈</button>
-            <button class="quick-btn">도수 렌즈 배송</button>
-          </div>
-
-          <div class="chat-input-container">
-            <input type="text" id="userInput" placeholder="첫번째로 직접 질문을 입력해 보시오..." />
-            <button id="sendBtn">전송 ➔</button>
-          </div>
-        </article>
-
-        <article class="my-status-card">
-          <div class="status-header">
-            <span class="status-icon">👤</span>
-            <h3>마이 쇼핑 & 문의 현황</h3>
-            <span class="user-name-tag">홍길동님 환영</span>
-          </div>
-          <div class="status-content">
-            <div class="status-item">
-              <div class="item-title">
-                <span>최근 주문 배송 상태</span>
-                <span class="highlight-blue">• 배송 중 (오늘 도착 예정)</span>
-              </div>
-              <div class="item-body">
-                <strong>라운즈 클래식 하프폴드 C</strong>
-                <button class="arrow-btn">위치 추적 ➔</button>
-              </div>
-            </div>
-            <div class="status-item">
-              <div class="item-title">
-                <span>나의 1:1 문의 내역</span>
-                <span class="highlight-green">답변 완료</span>
-              </div>
-              <div class="item-body">
-                <span>가상 피팅 카메라가 안 켜져요.</span>
-                <button class="arrow-btn">답변 보기 ➔</button>
-              </div>
-            </div>
-          </div>
-          <div class="status-footer-btns">
-            <button class="footer-sub-btn">로그아웃</button>
-            <button class="footer-main-btn">📝 새로운 1:1 문의</button>
-          </div>
-        </article>
-      </div>
-
-      <section class="top-queries-section">
-        <h3 class="section-title">
-          가장 많이 찾는 질문 TOP 5 ⭐
-          <span class="time-stamp">실시간 인기 급상승 키워드 기준</span>
-        </h3>
-        <div class="top-grid">
-          <div class="top-card">
-            <span class="num">01</span>
-            <h4>배송 기간</h4>
-            <p>주문 후 언제 오나요?</p>
-          </div>
-          <div class="top-card">
-            <span class="num">02</span>
-            <h5>가상피팅 방법</h5>
-            <p>카메라 촬영 가이드</p>
-          </div>
-          <div class="top-card">
-            <span class="num">03</span>
-            <h4>도수 렌즈 처방전</h4>
-            <p>업로드/등록 가이드</p>
-          </div>
-          <div class="top-card">
-            <span class="num">04</span>
-            <h4>안경 관리 꿀팁</h4>
-            <p>올바른 세척과 보관</p>
-          </div>
-          <div class="top-card">
-            <span class="num">05</span>
-            <h4>교환 및 반품</h4>
-            <p>접수 및 비용 안내</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="faq-section">
-        <div class="faq-header-flex">
-          <h3 class="section-title">자주 묻는 질문 FAQ 📝</h3>
-          <span class="faq-tip">궁금한 주제를 선택해 상세 내역을 펼쳐보세요.</span>
-        </div>
-
-        <div class="faq-tabs">
-          <button class="tab-btn active" onclick="filterFaq('all')">전체</button>
-          <button class="tab-btn" onclick="filterFaq('delivery')">🚚 배송</button>
-          <button class="tab-btn" onclick="filterFaq('payment')">💳 결제/반품</button>
-          <button class="tab-btn" onclick="filterFaq('fitting')">👓 상품/피팅</button>
-          <button class="tab-btn" onclick="filterFaq('lens')">안경 관리</button>
-        </div>
-
-        <div class="faq-list">
-          <div class="faq-item" data-category="delivery">
-            <button class="faq-question">
-              <span class="badge badge-delivery">배송</span>
-              <span class="q-text">주문 후 배송은 얼마나 걸리나요?</span>
-              <span class="arrow">▼</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                라운즈의 기본 배송 기간은 영업일 기준 2~3일이 소요됩니다. 다만, 도수 렌즈나 맞춤형
-                상품의 경우 가공 기간이 추가로 1~2일 더 소요될 수 있습니다.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item" data-category="fitting">
-            <button class="faq-question">
-              <span class="badge badge-fitting">상품/피팅</span>
-              <span class="q-text">AI 가상 피팅은 어떻게 이용하나요?</span>
-              <span class="arrow">▼</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                스마트폰 카메라나 웹캠을 통해 라운즈 앱/웹에서 실시간으로 안경을 착용해 보실 수
-                있습니다. 'AI TRY-ON' 메뉴를 클릭해 페이스 라인을 스캔해 보세요!
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item" data-category="fitting">
-            <button class="faq-question">
-              <span class="badge badge-fitting">상품/피팅</span>
-              <span class="q-text">도수 렌즈 처방전은 어떻게 등록하나요?</span>
-              <span class="arrow">▼</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                결제 단계에서 안과나 안경원에서 발급받으신 처방전 사진을 업로드해 주시거나, 기존에
-                이용하던 도수 데이터를 직접 입력해 주시면 됩니다.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item" data-category="lens">
-            <button class="faq-question">
-              <span class="badge badge-lens">안경 관리</span>
-              <span class="q-text">도수 렌즈 교체 후 흐릿하게 보여요.</span>
-              <span class="arrow">▼</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                새로운 도수에 적응하는 데 약 1~3일의 시간이 필요할 수 있습니다. 증상이 지속되면
-                라운즈 파트너 안경원이나 고객센터로 문의해 주세요.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item" data-category="lens">
-            <button class="faq-question">
-              <span class="badge badge-lens">안경 관리</span>
-              <span class="q-text">안경 렌즈 올바른 세척 방법이 궁금해요.</span>
-              <span class="arrow">▼</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                흐르는 찬물에 먼지를 씻어낸 후, 중성세제(주방세제)를 한 방울 묻혀 부드럽게 닦아주고
-                극세사 천으로 물기를 제거하는 것이 코팅 유지에 좋습니다. 뜨거운 물은 절대
-                피해주세요.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item" data-category="delivery">
-            <button class="faq-question">
-              <span class="badge badge-delivery">배송</span>
-              <span class="q-text">배송 중 분실/파손에 대한 보상이 되나요?</span>
-              <span class="arrow">▼</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                네, 배송 과정에서 발생한 파손 및 분실건은 라운즈 고객센터 책임하에 100% 재발송 또는
-                환불 처리를 도와드리고 있습니다.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item" data-category="payment">
-            <button class="faq-question">
-              <span class="badge badge-payment">결제/반품</span>
-              <span class="q-text">어떤 결제 수단을 사용할 수 있나요?</span>
-              <span class="arrow">▼</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                신용카드, 간편결제(네이버페이, 카카오페이, 토스페이), 무통장 입금 및 휴대폰 결제 등
-                다양한 수단을 지원합니다.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item" data-category="payment">
-            <button class="faq-question">
-              <span class="badge badge-payment">결제/반품</span>
-              <span class="q-text">교환 및 반품은 어떻게 신청하나요?</span>
-              <span class="arrow">▼</span>
-            </button>
-            <div class="faq-answer">
-              <p>
-                마이페이지 > 주문/배송 조회에서 상품 수령 후 7일 이내에 [교환 신청] 또는 [반품 신청]
-                버튼을 눌러 접수해 주시면 택배 기사님이 자동 배정됩니다.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="cta-banner">
-        <div class="cta-text">
-          <h4>원하는 답변을 찾기 어려우셨나요?</h4>
-          <p>
-            전문 카운셀러가 확인하는 즉시 영업일 1시간 내에 100% 명쾌하게 답변을 전달해 드립니다.
+    <main>
+      <div class="content-wrapper">
+        <section class="hero-section">
+          <p class="sub-title">ROUNZ CUSTOMER SUPPORT</p>
+          <h1 class="main-title">무엇을 도와드릴까요?</h1>
+          <p class="desc">
+            안경 관리법, 배송, 교환/반품 등 궁금한 점을 AI 검색으로 빠르게 찾아보세요.
           </p>
+          <div class="search-bar-container">
+            <span class="search-bar-icon">🔍</span>
+            <input
+              type="text"
+              placeholder="배송, 가상피팅, 렌즈 교환 등 키워드를 등록해 주세요..."
+            />
+          </div>
+        </section>
+
+        <div class="dashboard-grid">
+          <article class="chat-card">
+            <div class="chat-header">
+              <div class="chat-user-info">
+                <span class="live-badge">LIVE</span>
+                <h2 class="chat-title">AI 상담 도우미</h2>
+              </div>
+              <span class="chat-sub-text">인공지능 상담사가 실시간으로 분석해 읽어드립니다.</span>
+              <span class="speed-tag">초고속 AI 답변</span>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+              <div class="message system">
+                안녕하세요! 라운즈 AI 챗봇입니다.<br />
+                안경 가상 피팅, 배송, 도수 렌즈 등 무엇이든 물어보세요! 😊
+              </div>
+            </div>
+
+            <div class="quick-buttons">
+              <button class="quick-btn">가상 피팅 안내</button>
+              <button class="quick-btn">알맞은 렌즈</button>
+              <button class="quick-btn">도수 렌즈 배송</button>
+            </div>
+
+            <div class="chat-input-container">
+              <input
+                type="text"
+                id="userInput"
+                placeholder="첫번째로 직접 질문을 입력해 보시오..."
+              />
+              <button id="sendBtn">전송 ➔</button>
+            </div>
+          </article>
+
+          <article class="my-status-card">
+            <div class="status-header">
+              <span class="status-icon">👤</span>
+              <h3>마이 쇼핑 & 문의 현황</h3>
+              <span class="user-name-tag">홍길동님 환영</span>
+            </div>
+            <div class="status-content">
+              <div class="status-item">
+                <div class="item-title">
+                  <span>최근 주문 배송 상태</span>
+                  <span class="highlight-blue">• 배송 중 (오늘 도착 예정)</span>
+                </div>
+                <div class="item-body">
+                  <strong>라운즈 클래식 하프폴드 C</strong>
+                  <button class="arrow-btn">위치 추적 ➔</button>
+                </div>
+              </div>
+              <div class="status-item">
+                <div class="item-title">
+                  <span>나의 1:1 문의 내역</span>
+                  <span class="highlight-green">답변 완료</span>
+                </div>
+                <div class="item-body">
+                  <span>가상 피팅 카메라가 안 켜져요.</span>
+                  <button class="arrow-btn">답변 보기 ➔</button>
+                </div>
+              </div>
+            </div>
+            <div class="status-footer-btns">
+              <button class="footer-sub-btn">로그아웃</button>
+              <button class="footer-main-btn">📝 새로운 1:1 문의</button>
+            </div>
+          </article>
         </div>
-        <button class="cta-btn">✉️ 1:1 문의글 남기기</button>
-      </section>
+
+        <section class="top-queries-section">
+          <h3 class="section-title">
+            가장 많이 찾는 질문 TOP 5 ⭐
+            <span class="time-stamp">실시간 인기 급상승 키워드 기준</span>
+          </h3>
+          <div class="top-grid">
+            <div class="top-card">
+              <span class="num">01</span>
+              <h4>배송 기간</h4>
+              <p>주문 후 언제 오나요?</p>
+            </div>
+            <div class="top-card">
+              <span class="num">02</span>
+              <h5>가상피팅 방법</h5>
+              <p>카메라 촬영 가이드</p>
+            </div>
+            <div class="top-card">
+              <span class="num">03</span>
+              <h4>도수 렌즈 처방전</h4>
+              <p>업로드/등록 가이드</p>
+            </div>
+            <div class="top-card">
+              <span class="num">04</span>
+              <h4>안경 관리 꿀팁</h4>
+              <p>올바른 세척과 보관</p>
+            </div>
+            <div class="top-card">
+              <span class="num">05</span>
+              <h4>교환 및 반품</h4>
+              <p>접수 및 비용 안내</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="faq-section">
+          <div class="faq-header-flex">
+            <h3 class="section-title">자주 묻는 질문 FAQ 📝</h3>
+            <span class="faq-tip">궁금한 주제를 선택해 상세 내역을 펼쳐보세요.</span>
+          </div>
+
+          <div class="faq-tabs">
+            <button class="tab-btn active" onclick="filterFaq('all')">전체</button>
+            <button class="tab-btn" onclick="filterFaq('delivery')">🚚 배송</button>
+            <button class="tab-btn" onclick="filterFaq('payment')">💳 결제/반품</button>
+            <button class="tab-btn" onclick="filterFaq('fitting')">👓 상품/피팅</button>
+            <button class="tab-btn" onclick="filterFaq('lens')">안경 관리</button>
+          </div>
+
+          <div class="faq-list">
+            <div class="faq-item" data-category="delivery">
+              <button class="faq-question">
+                <span class="badge badge-delivery">배송</span>
+                <span class="q-text">주문 후 배송은 얼마나 걸리나요?</span>
+                <span class="arrow">▼</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  라운즈의 기본 배송 기간은 영업일 기준 2~3일이 소요됩니다. 다만, 도수 렌즈나 맞춤형
+                  상품의 경우 가공 기간이 추가로 1~2일 더 소요될 수 있습니다.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-category="fitting">
+              <button class="faq-question">
+                <span class="badge badge-fitting">상품/피팅</span>
+                <span class="q-text">AI 가상 피팅은 어떻게 이용하나요?</span>
+                <span class="arrow">▼</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  스마트폰 카메라나 웹캠을 통해 라운즈 앱/웹에서 실시간으로 안경을 착용해 보실 수
+                  있습니다. 'AI TRY-ON' 메뉴를 클릭해 페이스 라인을 스캔해 보세요!
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-category="fitting">
+              <button class="faq-question">
+                <span class="badge badge-fitting">상품/피팅</span>
+                <span class="q-text">도수 렌즈 처방전은 어떻게 등록하나요?</span>
+                <span class="arrow">▼</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  결제 단계에서 안과나 안경원에서 발급받으신 처방전 사진을 업로드해 주시거나, 기존에
+                  이용하던 도수 데이터를 직접 입력해 주시면 됩니다.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-category="lens">
+              <button class="faq-question">
+                <span class="badge badge-lens">안경 관리</span>
+                <span class="q-text">도수 렌즈 교체 후 흐릿하게 보여요.</span>
+                <span class="arrow">▼</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  새로운 도수에 적응하는 데 약 1~3일의 시간이 필요할 수 있습니다. 증상이 지속되면
+                  라운즈 파트너 안경원이나 고객센터로 문의해 주세요.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-category="lens">
+              <button class="faq-question">
+                <span class="badge badge-lens">안경 관리</span>
+                <span class="q-text">안경 렌즈 올바른 세척 방법이 궁금해요.</span>
+                <span class="arrow">▼</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  흐르는 찬물에 먼지를 씻어낸 후, 중성세제(주방세제)를 한 방울 묻혀 부드럽게
+                  닦아주고 극세사 천으로 물기를 제거하는 것이 코팅 유지에 좋습니다. 뜨거운 물은 절대
+                  피해주세요.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-category="delivery">
+              <button class="faq-question">
+                <span class="badge badge-delivery">배송</span>
+                <span class="q-text">배송 중 분실/파손에 대한 보상이 되나요?</span>
+                <span class="arrow">▼</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  네, 배송 과정에서 발생한 파손 및 분실건은 라운즈 고객센터 책임하에 100% 재발송
+                  또는 환불 처리를 도와드리고 있습니다.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-category="payment">
+              <button class="faq-question">
+                <span class="badge badge-payment">결제/반품</span>
+                <span class="q-text">어떤 결제 수단을 사용할 수 있나요?</span>
+                <span class="arrow">▼</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  신용카드, 간편결제(네이버페이, 카카오페이, 토스페이), 무통장 입금 및 휴대폰 결제
+                  등 다양한 수단을 지원합니다.
+                </p>
+              </div>
+            </div>
+
+            <div class="faq-item" data-category="payment">
+              <button class="faq-question">
+                <span class="badge badge-payment">결제/반품</span>
+                <span class="q-text">교환 및 반품은 어떻게 신청하나요?</span>
+                <span class="arrow">▼</span>
+              </button>
+              <div class="faq-answer">
+                <p>
+                  마이페이지 > 주문/배송 조회에서 상품 수령 후 7일 이내에 [교환 신청] 또는 [반품
+                  신청] 버튼을 눌러 접수해 주시면 택배 기사님이 자동 배정됩니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-banner">
+          <div class="cta-text">
+            <h4>원하는 답변을 찾기 어려우셨나요?</h4>
+            <p>
+              전문 카운셀러가 확인하는 즉시 영업일 1시간 내에 100% 명쾌하게 답변을 전달해 드립니다.
+            </p>
+          </div>
+          <button class="cta-btn">✉️ 1:1 문의글 남기기</button>
+        </section>
+      </div>
     </main>
     <footer id="footer"></footer>
     <script src="app.js"></script>
