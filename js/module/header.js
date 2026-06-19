@@ -12,8 +12,8 @@ export function renderHeader() {
           </h1>
           <nav class="gnb">
             <ul class="gnb-list">
-              <li><a href="#" class="un-ready>안경</a></li>
-              <li><a href="#" class="un-ready>선글라스</a></li>
+              <li><a href="#" class="un-ready">안경</a></li>
+              <li><a href="#" class="un-ready">선글라스</a></li>
               <li><a href="#" class="un-ready">AI TRY-ON</a></li>
               <li><a href="support.html">고객센터</a></li>
             </ul>
@@ -40,8 +40,8 @@ export function renderHeader() {
       </div>
       <nav class="mobile-menu">
         <ul>
-          <li><a href="#" class="un-ready>안경</a></li>
-          <li><a href="#" class="un-ready>선글라스</a></li>
+          <li><a href="#" class="un-ready">안경</a></li>
+          <li><a href="#" class="un-ready">선글라스</a></li>
           <li><a href="#" class="un-ready">AI TRY-ON</a></li>
           <li><a href="support.html">고객센터</a></li>
           <li><a href="#" class="un-ready">검색</a></li>

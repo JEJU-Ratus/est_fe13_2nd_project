@@ -49,8 +49,14 @@ body {
 }
 
 #header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   border-bottom: 1px solid #e4e4e7;
   background: rgba(228, 228, 231, 0.5);
+  backdrop-filter: blur(10px);
 }
 
 .header-wrapper {
@@ -60,6 +66,7 @@ body {
   padding: 20px 80px;
   max-width: 1200px;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .header-wrapper .header-left {
@@ -163,6 +170,15 @@ body {
   }
   .mobile-menu li + li {
     margin-top: 20px;
+  }
+}
+main {
+  padding-top: 77px !important;
+}
+
+@media (max-width: 767px) {
+  main {
+    padding-top: 64px !important;
   }
 }
 .footer-wrapper {

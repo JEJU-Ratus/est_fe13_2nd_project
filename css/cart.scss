@@ -52,6 +52,7 @@ body {
   font-weight: var.$weight-bold;
   color: clr.$color-title;
   margin-bottom: 120px;
+  padding-top: 20px;
 
   @media (max-width: var.$tablet) {
     font-size: 36px;

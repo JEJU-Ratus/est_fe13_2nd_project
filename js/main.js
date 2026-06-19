@@ -10,13 +10,14 @@ let infiniteMode = false;
 let isLoading = false;
 
 async function fetchProducts() {
+  renderSkeleton();
   try {
     const res = await fetch(API);
     const data = await res.json();
     // console.log(data.products);
-    renderSkeleton();
     products = data.products;
     // console.log(Array.isArray(products));
+    allProductGrid.innerHTML = "";
     renderNewProducts(products);
     renderMoreProducts();
   } catch (error) {
@@ -45,6 +46,7 @@ function renderSkeleton() {
             </li>
   `;
   newProductGrid.innerHTML = Array.from({ length: 4 }, () => skeletonHTML).join("");
+  allProductGrid.innerHTML = Array.from({ length: 12 }, () => skeletonHTML).join("");
 }
 // 상품 리스트
 function productHTML(p, showBadge = false) {

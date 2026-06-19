@@ -52,8 +52,15 @@ body {
 }
 // ---------------------------------header -- 최수민(송민혁 css 수정)
 #header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
   border-bottom: 1px solid clr.$color-border;
   background: rgba(#e4e4e7, 0.5);
+  backdrop-filter: blur(10px);
 }
 .header-wrapper {
   display: flex;
@@ -62,6 +69,7 @@ body {
   padding: 20px 80px;
   max-width: var.$desktop;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .header-wrapper .header-left {
@@ -170,6 +178,15 @@ body {
     li + li {
       margin-top: 20px;
     }
+  }
+}
+// ----------------------- main
+main {
+  padding-top: 77px !important;
+}
+@media (max-width: 767px) {
+  main {
+    padding-top: 64px !important;
   }
 }
 // -----------------------------footer -송민혁

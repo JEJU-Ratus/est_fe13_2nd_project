@@ -39,6 +39,7 @@ body {
   font-weight: 700;
   color: rgba(24, 24, 27, 0.9);
   margin-bottom: 120px;
+  padding-top: 20px;
 }
 @media (max-width: 768px) {
   .cart-title {
