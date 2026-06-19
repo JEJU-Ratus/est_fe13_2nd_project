@@ -44,9 +44,7 @@ function renderSkeleton() {
               </div>
             </li>
   `;
-  newProductGrid.innerHTML = Array.from({ length: 4 }, () => skeletonHTML).join(
-    "",
-  );
+  newProductGrid.innerHTML = Array.from({ length: 4 }, () => skeletonHTML).join("");
 }
 // 상품 리스트
 function productHTML(p, showBadge = false) {
@@ -82,9 +80,7 @@ function productHTML(p, showBadge = false) {
 function renderNewProducts(products) {
   const newProducts = products.slice(0, 4);
   // console.log(newProducts);
-  newProductGrid.innerHTML = newProducts
-    .map(np => productHTML(np, true))
-    .join("");
+  newProductGrid.innerHTML = newProducts.map(np => productHTML(np, true)).join("");
 }
 // 전체 아이웨어
 function renderMoreProducts() {

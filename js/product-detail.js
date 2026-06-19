@@ -1,11 +1,13 @@
 const API = "./data/product.json";
 
-//토스트 메시지
+// 토스트 메시지 함수
 function showToast(message) {
   const toast = document.querySelector("#toast");
   if (!toast) return;
+
   toast.textContent = message;
   toast.classList.add("show");
+
   setTimeout(() => {
     toast.classList.remove("show");
   }, 2000);
@@ -30,41 +32,35 @@ async function loadProductDetail() {
     return;
   }
 
-  // 메인 이미지 교체
   const mainImg = document.querySelector(".main-img");
   if (mainImg) {
     mainImg.src = product.thumbnail;
     mainImg.alt = product.title;
   }
 
-  // 첫 번째 썸네일 이미지 교체
   const firstThumbnailImg = document.querySelector(".thumbnail-item:first-child img");
   if (firstThumbnailImg) {
     firstThumbnailImg.src = product.thumbnail;
     firstThumbnailImg.alt = product.title;
   }
 
-  // 브랜드명
   const brandName = document.querySelector(".brand-name");
   if (brandName) brandName.textContent = product.brand;
 
-  // 상품명 (breadcrumb + 타이틀)
   const productTitle = document.querySelector(".product-title");
   if (productTitle) productTitle.textContent = product.title;
 
   const breadcrumbCurrent = document.querySelector(".breadcrumb [aria-current='page']");
   if (breadcrumbCurrent) breadcrumbCurrent.textContent = product.title;
 
-  // 가격 (sale 관련 .original-price, .discount-rate 는 건드리지 않음)
   const currentPrice = document.querySelector(".current-price");
   if (currentPrice) currentPrice.textContent = `${product.price.toLocaleString()}원`;
 
-  // 페이지 타이틀
   document.title = `ROUNZ | ${product.title}`;
 }
 
 function initProductDetail() {
-  // 1. 하트 버튼 초기화
+  // 1. 즐겨찾기 버튼
   const wishBtn = document.querySelector(".btn-wish");
   if (wishBtn) {
     wishBtn.addEventListener("click", () => {
@@ -77,6 +73,7 @@ function initProductDetail() {
           ? "'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24"
           : "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24";
       }
+
       showToast(isActive ? "즐겨찾기에 추가되었습니다." : "즐겨찾기에서 해제되었습니다.");
     });
   }
@@ -84,12 +81,14 @@ function initProductDetail() {
   // 2. 갤러리 썸네일 기능
   const mainImg = document.querySelector(".main-img");
   const thumbnails = document.querySelectorAll(".thumbnail-item");
+
   if (mainImg && thumbnails.length > 0) {
     thumbnails.forEach(thumbnail => {
       thumbnail.addEventListener("click", () => {
         document.querySelector(".thumbnail-item.active")?.classList.remove("active");
         thumbnail.classList.add("active");
-        const newImgSrc = thumbnail.querySelector("img").getAttribute("src");
+
+        const newImgSrc = thumbnail.querySelector("img")?.getAttribute("src");
         if (newImgSrc) mainImg.setAttribute("src", newImgSrc);
       });
     });
@@ -98,40 +97,46 @@ function initProductDetail() {
   // 3. 컬러 칩 선택 기능
   let selectedColor = "기본";
   const colorChips = document.querySelectorAll(".chip");
+
   if (colorChips.length > 0) {
     colorChips.forEach(chip => {
       chip.addEventListener("click", () => {
         document.querySelector(".chip.active")?.classList.remove("active");
         chip.classList.add("active");
-        const colorName = chip.classList.contains("chip-grey")
-          ? "그레이"
-          : chip.classList.contains("chip-yellow")
-            ? "옐로우"
-            : "블랙";
-        // console.log(`선택된 컬러: ${colorName}`);
+
+        selectedColor = chip.getAttribute("aria-label")?.replace(" 컬러 선택", "") || "기본";
+        console.log(`선택된 컬러: ${selectedColor}`);
       });
     });
   }
 
-  // 4. 액션 버튼 그룹 기능
+  // 4. 액션 버튼
   const tryOnBtn = document.querySelector(".btn-try-on");
   const cartBtn = document.querySelector(".btn-cart");
   const buyBtn = document.querySelector(".btn-buy");
-  const modal = document.querySelector("#tryon-modal");
-  const closeModalBtn = document.querySelector(".close-modal");
+
+  const tryonModal = document.querySelector("#tryon-modal");
+  const closeTryonBtn = document.querySelector("#close-tryon-modal");
 
   const cartConfirmModal = document.querySelector("#cart-confirm-modal");
   const goToCartBtn = document.querySelector("#go-to-cart");
   const closeCartModalBtn = document.querySelector("#close-cart-modal");
 
-  tryOnBtn?.addEventListener("click", () => modal?.classList.add("open"));
-  closeModalBtn?.addEventListener("click", () => modal?.classList.remove("open"));
+  // AI 가상 피팅 모달
+  tryOnBtn?.addEventListener("click", () => {
+    tryonModal?.classList.add("open");
+  });
 
+  closeTryonBtn?.addEventListener("click", () => {
+    tryonModal?.classList.remove("open");
+  });
+
+  // 장바구니 버튼
   cartBtn?.addEventListener("click", () => {
     const params = new URLSearchParams(window.location.search);
     const productId = params.get("id") || "default-id";
 
-    const productBrand = document.querySelector(".brand-name")?.textContent ?? ""; // 추가
+    const productBrand = document.querySelector(".brand-name")?.textContent ?? "";
     const productName = document.querySelector(".product-title")?.textContent;
     const productPrice = document.querySelector(".current-price")?.textContent;
     const productImage = document.querySelector(".main-img")?.getAttribute("src");
@@ -145,7 +150,7 @@ function initProductDetail() {
 
     const cartItem = {
       id: productId,
-      brand: productBrand, // 추가
+      brand: productBrand,
       name: productName,
       price: numericPrice,
       image: productImage,
@@ -158,6 +163,7 @@ function initProductDetail() {
     const existingItemIndex = cart.findIndex(
       item => item.id === cartItem.id && item.color === cartItem.color,
     );
+
     if (existingItemIndex > -1) {
       cart[existingItemIndex].quantity += 1;
     } else {
